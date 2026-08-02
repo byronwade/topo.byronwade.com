@@ -21,7 +21,7 @@ jobs:
           node-version: 24
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm --filter @topo/browser exec playwright install --with-deps chromium
       - run: pnpm docs:check
       - run: pnpm exec turbo run typecheck
       - run: pnpm exec turbo run test
@@ -61,7 +61,7 @@ jobs:
           node-version: 24
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm --filter @topo/browser exec playwright install --with-deps chromium
       - name: Run ${{ matrix.check.name }}
         run: ${{ matrix.check.command }}
       - name: Retain verification evidence
