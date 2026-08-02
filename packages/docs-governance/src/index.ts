@@ -9,6 +9,10 @@ import {
 } from "./policy.js";
 import { validateAutomationWorkflows } from "./workflow-contract.js";
 
+export function normalizeLineEndings(value: string): string {
+  return value.replace(/\r\n?/g, "\n");
+}
+
 export interface ProductFeature {
   id: string;
   title: string;
@@ -526,7 +530,8 @@ export async function validateDocumentation(
   const changelogPath = path.join(root, "docs", "CHANGELOG.md");
   if (
     (await exists(changelogPath)) &&
-    (await readFile(changelogPath, "utf8")) !== generatedChangelog
+    normalizeLineEndings(await readFile(changelogPath, "utf8")) !==
+      normalizeLineEndings(generatedChangelog)
   ) {
     issue(
       "changelog-drift",

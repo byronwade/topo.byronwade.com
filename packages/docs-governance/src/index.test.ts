@@ -1,10 +1,20 @@
 import { describe, expect, it } from "vitest";
 import { fileURLToPath } from "node:url";
 
-import { featureFingerprint, validateDocumentation } from "./index.js";
+import {
+  featureFingerprint,
+  normalizeLineEndings,
+  validateDocumentation,
+} from "./index.js";
 import { validateAutomationWorkflows } from "./workflow-contract.js";
 
 describe("documentation governance", () => {
+  it("normalizes platform line endings before comparing generated documents", () => {
+    expect(normalizeLineEndings("one\r\ntwo\rthree\nfour")).toBe(
+      "one\ntwo\nthree\nfour",
+    );
+  });
+
   it("fingerprints feature content deterministically", () => {
     const feature = {
       id: "atlas",
