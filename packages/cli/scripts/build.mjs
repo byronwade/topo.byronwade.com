@@ -29,6 +29,7 @@ const nodeExternals = [
   "pngjs",
   "vite",
   "ws",
+  "yaml",
   "zod",
 ];
 
