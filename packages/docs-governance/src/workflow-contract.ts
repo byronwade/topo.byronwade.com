@@ -88,10 +88,10 @@ export async function validateAutomationWorkflows(
   const verifyCommands = commands(verifyJob);
   for (const required of [
     "pnpm docs:check",
-    "pnpm exec turbo run typecheck",
-    "pnpm exec turbo run test --filter=!@topo/browser",
+    "pnpm exec turbo run typecheck --concurrency=4",
+    "pnpm exec turbo run test --filter=!@topo/browser --concurrency=4",
     "pnpm --filter @topo/browser test",
-    "pnpm exec turbo run build",
+    "pnpm exec turbo run build --concurrency=4",
     "pnpm --filter @topo/cli pack:check",
     "pnpm benchmark --profile smoke --check",
   ]) {
