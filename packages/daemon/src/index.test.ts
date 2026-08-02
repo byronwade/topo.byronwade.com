@@ -18,6 +18,13 @@ import {
 
 const temporaryDirectories: string[] = [];
 
+async function temporaryDirectory(prefix: string): Promise<string> {
+  const directory = await fs.mkdtemp(path.join(os.tmpdir(), prefix));
+  const canonicalDirectory = await fs.realpath(directory);
+  temporaryDirectories.push(canonicalDirectory);
+  return canonicalDirectory;
+}
+
 const runDoctorFixture: NonNullable<DaemonOptions["runDoctor"]> = async ({
   project,
   graph,
@@ -75,10 +82,7 @@ describe("daemon", () => {
   });
 
   it("exposes a graph-aware inventory for built-in and project adapters", async () => {
-    const projectRoot = await fs.mkdtemp(
-      path.join(os.tmpdir(), "topo-daemon-adapters-"),
-    );
-    temporaryDirectories.push(projectRoot);
+    const projectRoot = await temporaryDirectory("topo-daemon-adapters-");
     await fs.mkdir(path.join(projectRoot, "app"), { recursive: true });
     await fs.mkdir(path.join(projectRoot, "topo", "adapters", "acme-routes"), {
       recursive: true,
@@ -720,10 +724,7 @@ describe("daemon", () => {
   });
 
   it("keeps nested application source separate from project-owned durable context", async () => {
-    const projectRoot = await fs.mkdtemp(
-      path.join(os.tmpdir(), "topo-daemon-monorepo-"),
-    );
-    temporaryDirectories.push(projectRoot);
+    const projectRoot = await temporaryDirectory("topo-daemon-monorepo-");
     const sourceRoot = path.join(projectRoot, "apps", "web");
     await fs.mkdir(path.join(sourceRoot, "app"), { recursive: true });
     await fs.writeFile(
@@ -794,10 +795,7 @@ describe("daemon", () => {
   });
 
   it("rescans and recaptures only source-impacted screens after a watched change", async () => {
-    const directory = await fs.mkdtemp(
-      path.join(os.tmpdir(), "topo-daemon-watch-"),
-    );
-    temporaryDirectories.push(directory);
+    const directory = await temporaryDirectory("topo-daemon-watch-");
     await fs.writeFile(
       path.join(directory, "package.json"),
       JSON.stringify({ dependencies: { next: "^16.0.0" } }),
