@@ -36,6 +36,12 @@ function hasCommand(values: readonly string[], expected: string) {
   return values.some((value) => value.trim() === expected);
 }
 
+function hasPlaywrightChromiumInstall(values: readonly string[]) {
+  return values.some((value) =>
+    /\bplaywright\s+install(?:\s+--with-deps)?\s+chromium\b/.test(value),
+  );
+}
+
 function addIssue(
   issues: AutomationWorkflowIssue[],
   filePath: string,
@@ -91,6 +97,8 @@ export async function validateAutomationWorkflows(
     if (!hasCommand(verifyCommands, required))
       addIssue(issues, ciPath, `CI verify job must run: ${required}`);
   }
+  if (!hasPlaywrightChromiumInstall(verifyCommands))
+    addIssue(issues, ciPath, "CI verify job must install Chromium before tests.");
 
   if (browserJob.needs !== "verify")
     addIssue(issues, ciPath, "CI browser matrix must depend on verify.");
@@ -127,13 +135,7 @@ export async function validateAutomationWorkflows(
       "Every CI browser matrix entry must declare a pnpm command.",
     );
   const browserSteps = steps(browserJob);
-  if (
-    !browserSteps.some(
-      (step) =>
-        typeof step.run === "string" &&
-        step.run.includes("playwright install --with-deps chromium"),
-    )
-  )
+  if (!hasPlaywrightChromiumInstall(commands(browserJob)))
     addIssue(issues, ciPath, "CI browser matrix must install Chromium.");
   if (!hasCommand(commands(browserJob), "${{ matrix.check.command }}"))
     addIssue(
