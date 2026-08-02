@@ -89,7 +89,8 @@ export async function validateAutomationWorkflows(
   for (const required of [
     "pnpm docs:check",
     "pnpm exec turbo run typecheck",
-    "pnpm exec turbo run test",
+    "pnpm exec turbo run test --filter=!@topo/browser",
+    "pnpm --filter @topo/browser test",
     "pnpm exec turbo run build",
     "pnpm --filter @topo/cli pack:check",
     "pnpm benchmark --profile smoke --check",

@@ -24,7 +24,8 @@ jobs:
       - run: pnpm --filter @topo/browser exec playwright install chromium
       - run: pnpm docs:check
       - run: pnpm exec turbo run typecheck
-      - run: pnpm exec turbo run test
+      - run: pnpm exec turbo run test --filter=!@topo/browser
+      - run: pnpm --filter @topo/browser test
       - run: pnpm exec turbo run build
       - run: pnpm --filter @topo/cli pack:check
       - run: pnpm benchmark --profile smoke --check
