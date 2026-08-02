@@ -2,6 +2,7 @@ import {
   mkdtemp,
   mkdir,
   readFile,
+  realpath,
   rm,
   symlink,
   writeFile,
@@ -56,7 +57,10 @@ afterEach(async () => {
 async function projectFixture(): Promise<string> {
   const directory = await mkdtemp(path.join(os.tmpdir(), "topo-adapter-"));
   temporaryDirectories.push(directory);
-  return directory;
+  // The implementation exposes the physical project root for containment
+  // checks. Canonicalize the fixture too because Windows may return an 8.3
+  // short path from mkdtemp while realpath returns the long path.
+  return realpath(directory);
 }
 
 const cases: Array<{
