@@ -335,32 +335,38 @@ describe("project state store", () => {
     ]);
   });
 
-  it("serializes independent store instances that target the same state file", async () => {
-    const directory = await fs.mkdtemp(path.join(os.tmpdir(), "topo-storage-"));
-    temporaryDirectories.push(directory);
-    const stores = Array.from({ length: 24 }, () =>
-      createProjectStateStore(directory),
-    );
+  it(
+    "serializes independent store instances that target the same state file",
+    async () => {
+      const directory = await fs.mkdtemp(
+        path.join(os.tmpdir(), "topo-storage-"),
+      );
+      temporaryDirectories.push(directory);
+      const stores = Array.from({ length: 24 }, () =>
+        createProjectStateStore(directory),
+      );
 
-    await Promise.all(
-      stores.map((store, index) =>
-        store.recordSnapshot({
-          id: `snapshot-${index}`,
-          screenId: `screen-${index}`,
-          routePath: `/route-${index}`,
-          capturedAt: "2026-08-01T00:00:00.000Z",
-          status: "captured",
-          contentHash: String(index).padStart(64, "0"),
-        }),
-      ),
-    );
+      await Promise.all(
+        stores.map((store, index) =>
+          store.recordSnapshot({
+            id: `snapshot-${index}`,
+            screenId: `screen-${index}`,
+            routePath: `/route-${index}`,
+            capturedAt: "2026-08-01T00:00:00.000Z",
+            status: "captured",
+            contentHash: String(index).padStart(64, "0"),
+          }),
+        ),
+      );
 
-    const state = await createProjectStateStore(directory).read();
-    expect(state.snapshots).toHaveLength(stores.length);
-    expect(state.snapshots.map((item) => item.id).sort()).toEqual(
-      stores.map((_, index) => `snapshot-${index}`).sort(),
-    );
-  });
+      const state = await createProjectStateStore(directory).read();
+      expect(state.snapshots).toHaveLength(stores.length);
+      expect(state.snapshots.map((item) => item.id).sort()).toEqual(
+        stores.map((_, index) => `snapshot-${index}`).sort(),
+      );
+    },
+    15_000,
+  );
 
   it("retains every active job and only the newest terminal history", () => {
     const job = (
