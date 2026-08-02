@@ -313,6 +313,15 @@ export async function validateDocumentation(
 ): Promise<DocumentationReport> {
   const root = path.resolve(rootDir);
   const issues: DocumentationIssue[] = [];
+  const existenceCache = new Map<string, Promise<boolean>>();
+  const fileExists = (filePath: string): Promise<boolean> => {
+    const absolutePath = path.resolve(root, filePath);
+    const cached = existenceCache.get(absolutePath);
+    if (cached) return cached;
+    const result = exists(absolutePath);
+    existenceCache.set(absolutePath, result);
+    return result;
+  };
   let manifest: ProductManifest;
   let changeLog: ProductChangeLog;
   const issue = (code: string, message: string, filePath?: string) =>
@@ -367,7 +376,7 @@ export async function validateDocumentation(
     ...DOCUMENTATION_POLICY.requiredDocuments,
     ...DOCUMENTATION_POLICY.requiredPublicRoutes,
   ]) {
-    if (!(await exists(path.join(root, filePath))))
+    if (!(await fileExists(filePath)))
       issue(
         "missing-required-file",
         `Required file is missing: ${filePath}`,
@@ -401,6 +410,31 @@ export async function validateDocumentation(
       }
     }
   }
+
+  // Evidence and link checks can touch hundreds of files. Start every unique
+  // filesystem lookup together so repository validation remains quick on
+  // Windows as well as Unix filesystems. The cache keeps repeated evidence
+  // and documentation references to the same path to one lookup.
+  const pathsToCheck = new Set<string>([
+    ...DOCUMENTATION_POLICY.requiredDocuments,
+    ...DOCUMENTATION_POLICY.requiredPublicRoutes,
+    "docs/CHANGELOG.md",
+  ]);
+  for (const feature of manifest.features) {
+    for (const evidencePath of feature.evidence) pathsToCheck.add(evidencePath);
+    for (const reference of feature.docs) {
+      const [filePath] = reference.split("#", 1);
+      if (filePath) pathsToCheck.add(filePath);
+    }
+  }
+  for (const [filePath, content] of markdownContent) {
+    for (const href of localLinks(content)) {
+      const [target] = href.split("#", 1);
+      if (target)
+        pathsToCheck.add(path.resolve(root, path.dirname(filePath), target));
+    }
+  }
+  await Promise.all([...pathsToCheck].map((filePath) => fileExists(filePath)));
 
   const featureIds = new Set<string>();
   for (const feature of manifest.features) {
@@ -449,7 +483,7 @@ export async function validateDocumentation(
       );
 
     for (const evidencePath of feature.evidence) {
-      if (!(await exists(path.join(root, evidencePath))))
+      if (!(await fileExists(evidencePath)))
         issue(
           "missing-evidence",
           `${feature.id} evidence does not exist: ${evidencePath}`,
@@ -458,7 +492,7 @@ export async function validateDocumentation(
     }
     for (const reference of feature.docs) {
       const [filePath, anchor] = reference.split("#", 2);
-      if (!filePath || !(await exists(path.join(root, filePath)))) {
+      if (!filePath || !(await fileExists(filePath))) {
         issue(
           "missing-feature-doc",
           `${feature.id} documentation does not exist: ${reference}`,
@@ -529,7 +563,7 @@ export async function validateDocumentation(
   const generatedChangelog = renderProductChangelog(manifest, changeLog);
   const changelogPath = path.join(root, "docs", "CHANGELOG.md");
   if (
-    (await exists(changelogPath)) &&
+    (await fileExists(changelogPath)) &&
     normalizeLineEndings(await readFile(changelogPath, "utf8")) !==
       normalizeLineEndings(generatedChangelog)
   ) {
@@ -545,7 +579,7 @@ export async function validateDocumentation(
       const [target, anchor] = href.split("#", 2);
       if (!target) continue;
       const absoluteTarget = path.resolve(root, path.dirname(filePath), target);
-      if (!(await exists(absoluteTarget))) {
+      if (!(await fileExists(absoluteTarget))) {
         issue("broken-link", `Broken local link: ${href}`, filePath);
       } else if (anchor && absoluteTarget.endsWith(".md")) {
         const targetContent = await readFile(absoluteTarget, "utf8");
