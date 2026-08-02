@@ -21,11 +21,15 @@ const reviewExportSource = "../../packages/exporter/dist/index.js";
 const validationSource = "src/studio-validation.ts";
 const temporaryDirectories: string[] = [];
 
+async function temporaryDirectory(prefix: string): Promise<string> {
+  const directory = await fs.mkdtemp(path.join(os.tmpdir(), prefix));
+  const canonicalDirectory = await fs.realpath(directory);
+  temporaryDirectories.push(canonicalDirectory);
+  return canonicalDirectory;
+}
+
 async function createStudioBuild(): Promise<string> {
-  const directory = await fs.mkdtemp(
-    path.join(os.tmpdir(), "topo-showcase-source-"),
-  );
-  temporaryDirectories.push(directory);
+  const directory = await temporaryDirectory("topo-showcase-source-");
   await fs.mkdir(path.join(directory, "assets"));
   await fs.writeFile(
     path.join(directory, "index.html"),
@@ -102,10 +106,7 @@ afterEach(async () => {
 describe("buildStudioShowcase", () => {
   it("publishes a rebased, hashed, deterministic Studio artifact", async () => {
     const sourceDir = await createStudioBuild();
-    const outputDir = await fs.mkdtemp(
-      path.join(os.tmpdir(), "topo-showcase-parent-"),
-    );
-    temporaryDirectories.push(outputDir);
+    const outputDir = await temporaryDirectory("topo-showcase-parent-");
     const siteDir = path.join(outputDir, "site");
     const generatedAt = "2026-08-02T12:00:00.000Z";
 
@@ -153,10 +154,7 @@ describe("buildStudioShowcase", () => {
 
   it("refuses to replace output that it does not own", async () => {
     const sourceDir = await createStudioBuild();
-    const outputDir = await fs.mkdtemp(
-      path.join(os.tmpdir(), "topo-showcase-unowned-"),
-    );
-    temporaryDirectories.push(outputDir);
+    const outputDir = await temporaryDirectory("topo-showcase-unowned-");
     await fs.writeFile(path.join(outputDir, "keep.txt"), "user data");
 
     await expect(
@@ -230,10 +228,7 @@ describe("buildStudioShowcase", () => {
 
   it("rejects a source root reached through a filesystem link", async () => {
     const sourceDir = await createStudioBuild();
-    const linkParent = await fs.mkdtemp(
-      path.join(os.tmpdir(), "topo-showcase-link-"),
-    );
-    temporaryDirectories.push(linkParent);
+    const linkParent = await temporaryDirectory("topo-showcase-link-");
     const sourceLink = path.join(linkParent, "source-link");
     try {
       await fs.symlink(
