@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "id": "review-job",
+  "title": "Review a job",
+  "description": "Verify the generated dynamic route from the job index.",
+  "status": "verified",
+  "entryStepId": "open-overview",
+  "tags": ["tanstack-router", "compatibility"],
+  "steps": [
+    {
+      "id": "open-overview",
+      "title": "Open the overview",
+      "routePath": "/",
+      "action": "Load the application entry route",
+      "expected": "The generated-route overview appears",
+      "noteIds": [],
+      "nextStepIds": ["open-jobs"]
+    },
+    {
+      "id": "open-jobs",
+      "title": "Open jobs",
+      "routePath": "/jobs",
+      "action": "Choose Explore jobs",
+      "expected": "The deterministic job list appears",
+      "noteIds": [],
+      "nextStepIds": ["open-job"]
+    },
+    {
+      "id": "open-job",
+      "title": "Open a job",
+      "routePath": "/jobs/:jobId",
+      "action": "Choose a job row",
+      "expected": "The dynamic job detail appears",
+      "noteIds": [],
+      "nextStepIds": []
+    }
+  ],
+  "createdAt": "2026-08-01T12:00:00.000Z",
+  "updatedAt": "2026-08-01T12:00:00.000Z"
+}

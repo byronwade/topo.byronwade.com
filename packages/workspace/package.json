@@ -1,0 +1,40 @@
+{
+  "name": "@topo/workspace",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "Apache-2.0",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run --passWithNoTests"
+  },
+  "dependencies": {
+    "@topo/adapter-api-source": "workspace:*",
+    "@topo/adapter-flow-source": "workspace:*",
+    "@topo/adapter-next": "workspace:*",
+    "@topo/adapter-nuxt": "workspace:*",
+    "@topo/adapter-openapi": "workspace:*",
+    "@topo/adapter-react": "workspace:*",
+    "@topo/adapter-storybook": "workspace:*",
+    "@topo/adapter-svelte": "workspace:*",
+    "@topo/adapter-tanstack": "workspace:*",
+    "@topo/adapter-topo": "workspace:*",
+    "@topo/adapter-vue": "workspace:*",
+    "@topo/framework-adapter": "workspace:*",
+    "@topo/flow-adapter": "workspace:*",
+    "@topo/endpoint-adapter": "workspace:*",
+    "@topo/preview-adapter": "workspace:*",
+    "@topo/scanner": "workspace:*",
+    "@topo/schema": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0"
+  }
+}

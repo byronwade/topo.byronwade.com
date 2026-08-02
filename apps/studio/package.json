@@ -1,0 +1,39 @@
+{
+  "name": "@topo/studio",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "Apache-2.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build && node scripts/check-build.mjs",
+    "typecheck": "tsc -b --pretty false",
+    "test": "vitest run --passWithNoTests"
+  },
+  "dependencies": {
+    "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource-variable/jetbrains-mono": "^5.3.0",
+    "@topo/canvas-engine": "workspace:*",
+    "@topo/exporter": "workspace:*",
+    "@topo/live-frame-host": "workspace:*",
+    "@topo/layout": "workspace:*",
+    "@topo/protocol": "workspace:*",
+    "@topo/react": "workspace:*",
+    "@topo/renderer-pixi": "workspace:*",
+    "@topo/runtime-bridge": "workspace:*",
+    "@topo/schema": "workspace:*",
+    "@topo/studio-api": "workspace:*",
+    "lucide-react": "^1.28.0",
+    "pixi.js": "^8.10.2",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@topo/studio-host": "workspace:*",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^5.0.4",
+    "typescript": "^5.8.3",
+    "vite": "^7.0.6"
+  }
+}

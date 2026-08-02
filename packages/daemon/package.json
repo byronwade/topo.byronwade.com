@@ -1,0 +1,45 @@
+{
+  "name": "@topo/daemon",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "Apache-2.0",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run --passWithNoTests"
+  },
+  "dependencies": {
+    "@topo/adapter-inventory": "workspace:*",
+    "@topo/adapter-scaffold": "workspace:*",
+    "@topo/adapter-topo": "workspace:*",
+    "@topo/analyzer-static": "workspace:*",
+    "@topo/cache": "workspace:*",
+    "@topo/config": "workspace:*",
+    "@topo/diagnostics": "workspace:*",
+    "@topo/doctor": "workspace:*",
+    "@topo/exporter": "workspace:*",
+    "@topo/flows": "workspace:*",
+    "@topo/graph": "workspace:*",
+    "@topo/jobs": "workspace:*",
+    "@topo/layout": "workspace:*",
+    "@topo/llm-context": "workspace:*",
+    "@topo/notes": "workspace:*",
+    "@topo/protocol": "workspace:*",
+    "@topo/preview-scaffold": "workspace:*",
+    "@topo/preview-runtime": "workspace:*",
+    "@topo/schema": "workspace:*",
+    "@topo/snapshots": "workspace:*",
+    "@topo/storage": "workspace:*",
+    "@topo/workspace": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0"
+  }
+}

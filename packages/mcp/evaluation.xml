@@ -1,0 +1,42 @@
+<evaluation>
+  <qa_pair>
+    <question>In the fixed Topo MCP evaluation fixture, inspect all route records and their screen-state relationships. Which state exists alongside the default state on the only route with more than one screen state? Answer with the state name only.</question>
+    <answer>loading</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>Find the verified critical-path flow, start at its declared entry step, and follow next-step relationships until the route changes. Inspect the component used only by the destination screen. What is that component's preview status?</question>
+    <answer>missing</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>Compare the unresolved and resolved diagnostic records in the fixed fixture. Follow the higher-severity unresolved record's source file to the screen sourced from that same file. What is the screen title?</question>
+    <answer>Customers</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>Inspect every component and its used-by relationships in the fixed fixture. Which component is reused by the greatest number of distinct screens? Answer with its component name.</question>
+    <answer>StatusCard</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>Beginning at the public home screen, follow the two high-confidence navigation edges in sequence and inspect the final screen record. What is the final route path?</question>
+    <answer>/dashboard/customers</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>Inspect the project manifest, profile records, and profile payloads in the fixed fixture. Does any preview-profile record include authentication secrets? Answer true or false.</question>
+    <answer>false</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>Find the captured 1440 by 900 snapshot, follow its captures-screen relationship, and inspect that screen's route record. What route path was captured?</question>
+    <answer>/dashboard</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>Inspect the completed job record and compare its kind with the generated context file catalog exposed by the manifest. What single job kind produced those files?</question>
+    <answer>export</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>Find the note attached to the component that lacks a preview. Then inspect the verified flow steps to find the step that references this note. What is that flow-step title?</question>
+    <answer>Create customer · Open customers</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>Inspect the route aggregate whose default screen is already captured but whose alternate state remains unseen. How many screen states does that route expose? Answer with a number only.</question>
+    <answer>2</answer>
+  </qa_pair>
+</evaluation>

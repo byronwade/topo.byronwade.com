@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "id": "review-svelte-job",
+  "title": "Review Svelte job",
+  "description": "Open the Svelte job directory and inspect one job.",
+  "status": "verified",
+  "entryStepId": "overview",
+  "tags": ["fixture", "svelte"],
+  "steps": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "routePath": "/",
+      "noteIds": [],
+      "nextStepIds": ["jobs"]
+    },
+    {
+      "id": "jobs",
+      "title": "Jobs",
+      "routePath": "/jobs",
+      "noteIds": [],
+      "nextStepIds": ["job"]
+    },
+    {
+      "id": "job",
+      "title": "Job",
+      "routePath": "/jobs/:jobId",
+      "noteIds": [],
+      "nextStepIds": []
+    }
+  ],
+  "createdAt": "2026-08-02T00:00:00.000Z",
+  "updatedAt": "2026-08-02T00:00:00.000Z"
+}

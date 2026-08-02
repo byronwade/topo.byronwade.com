@@ -1,0 +1,2347 @@
+{
+  "schemaVersion": 1,
+  "changes": [
+    {
+      "id": "2026-08-02-studio-search-ux",
+      "date": "2026-08-02",
+      "summary": "Improved project search UX with platform-correct shortcuts and explicit unavailable action states.",
+      "features": [
+        {
+          "id": "studio-project-search",
+          "type": "changed",
+          "fingerprint": "7f9d5954612f1ce85e17b8a257afb7c179a63196f43c4e1d797702bf255ac695"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-api-ux",
+      "date": "2026-08-02",
+      "summary": "Improved API discovery UX with evidence-origin filters, readable domain groups, honest empty states, and derived source-screen and inferred-journey usage.",
+      "features": [
+        {
+          "id": "api-endpoint-atlas",
+          "type": "changed",
+          "fingerprint": "2fbc3734ba139e033c7ffd373861a23042b2968108266b520e43d0255c335478"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-atlas-ux",
+      "date": "2026-08-02",
+      "summary": "Improved Atlas orientation with readable surface navigation, counts in accessibility metadata, and keyboard tab movement.",
+      "features": [
+        {
+          "id": "application-atlas",
+          "type": "changed",
+          "fingerprint": "405bda74d73ab62cd3a0d4f36196b4525f2b37b607967f9b309f1a9ed9ff189e"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-source-flow-performance",
+      "date": "2026-08-02",
+      "summary": "System performance contract version 6 adds a contract-checked 10,000-transition source-flow discovery workload with the same 50 ms hot p95 ceiling.",
+      "features": [
+        {
+          "id": "performance-benchmarks",
+          "type": "changed",
+          "fingerprint": "01c9444b6403d7048bad3077da59282769b28c4da6b69a963fb17826fa209722"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-llm-context-v7",
+      "date": "2026-08-02",
+      "summary": "Context schema version 7 adds project recognition, source transitions, inferred journeys, and independently queryable inferred steps.",
+      "features": [
+        {
+          "id": "llm-context",
+          "type": "changed",
+          "fingerprint": "0eb7dec5c7abd6d841be429c526557bebf4599a5cf34f974354a472fe4ac48ed"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-inferred-user-flows",
+      "date": "2026-08-02",
+      "summary": "Studio now presents source-derived journey candidates separately from authoritative recorded flows.",
+      "features": [
+        {
+          "id": "user-flows",
+          "type": "changed",
+          "fingerprint": "0c1221fc334f0a6d29c07160897a6f6471c30fa43b1782846e4f3b2bc4e777d8"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-flow-adapter-scaffolding",
+      "date": "2026-08-02",
+      "summary": "Adapter scaffolding and inventory now include flow-discovery modules and exact transition and inferred-journey ownership.",
+      "features": [
+        {
+          "id": "adapter-scaffolding",
+          "type": "changed",
+          "fingerprint": "567eeec4e24756b25a41c93d8ad1449087a5a565efba819eff911995890f955e"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-automatic-project-understanding",
+      "date": "2026-08-02",
+      "summary": "Topo now recognizes project capabilities and derives source-backed transitions and read-only journey candidates from one incremental source snapshot.",
+      "features": [
+        {
+          "id": "automatic-project-understanding",
+          "type": "added",
+          "fingerprint": "ded0566b7e7548301e8a83c59e458fa08a91512a831328959979797cecb0d281"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-api-endpoint-mcp",
+      "date": "2026-08-02",
+      "summary": "Exposed complete bounded API endpoint records through the canonical read-only MCP context interface.",
+      "features": [
+        {
+          "id": "local-mcp",
+          "type": "changed",
+          "fingerprint": "9fd300685bb76df2dd3e02b5c3cbbde73146e61c91a78032df4b42016c38699e"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-api-endpoint-llm",
+      "date": "2026-08-02",
+      "summary": "Added schema-version-six API endpoint records, adapter relationships, bounded queries, and malformed-source issues.",
+      "features": [
+        {
+          "id": "llm-context",
+          "type": "changed",
+          "fingerprint": "ca51a02860ed6c24c3b877e92b8a0a3e7ed924b92cec788e7b22c604d6a49fc2"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-api-endpoint-adapters",
+      "date": "2026-08-02",
+      "summary": "Added API endpoint adapter scaffolding, conformance, configuration, and exact endpoint inventory membership.",
+      "features": [
+        {
+          "id": "adapter-scaffolding",
+          "type": "changed",
+          "fingerprint": "51529ca6a0322b058e5ed451f4c14aafe3b4c01518cc678aeebe0918d6b206d5"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-api-endpoint-performance",
+      "date": "2026-08-02",
+      "summary": "Added version-five 10,000-operation source API and OpenAPI workloads plus measured parser fast paths.",
+      "features": [
+        {
+          "id": "performance-benchmarks",
+          "type": "changed",
+          "fingerprint": "a73d0408f187bce7cdbb22b6470f9227384bf62d41dc33efe87d3e957e5d1801"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-api-endpoint-search",
+      "date": "2026-08-02",
+      "summary": "Added stable API endpoint search results and addressable APIs destination selection.",
+      "features": [
+        {
+          "id": "studio-project-search",
+          "type": "changed",
+          "fingerprint": "a9b8268bd0a20ab69cd3c0939ae129bed4cb1c611261e8c25405f1d75d434cfe"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-api-endpoint-atlas",
+      "date": "2026-08-02",
+      "summary": "Added normalized API endpoint discovery, Studio atlas, LLM and MCP records, cross-framework fixtures, and sub-50ms 10,000-operation benchmarks.",
+      "features": [
+        {
+          "id": "api-endpoint-atlas",
+          "type": "added",
+          "fingerprint": "0076d06ba7eebfb732fe83f6469152661a2cb0df69ba986eaa79449ab9dad13e"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-trusted-refresh-reconciliation",
+      "date": "2026-08-02",
+      "summary": "Reduce contract-checked daemon source refresh p95 from 50.327 ms to 32.514 ms while retaining default graph validation",
+      "features": [
+        {
+          "id": "performance-benchmarks",
+          "type": "changed",
+          "fingerprint": "c1034ba1872a4499743f92241201b7c10e886e99cefb803f79a6068fd32f2e1f"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-six-framework-performance-contract",
+      "date": "2026-08-02",
+      "summary": "Measure all six built-in framework adapters at 10,000 routes under the 50 ms hot-path ceiling.",
+      "features": [
+        {
+          "id": "performance-benchmarks",
+          "type": "changed",
+          "fingerprint": "ed1c23398bb392cb3f115b1b135ba4eff77669b9a641275202d4888f909a9beb"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-multi-framework-runtime-and-source",
+      "date": "2026-08-02",
+      "summary": "Extend setup, native runtimes, and source intelligence across React, Vue, Nuxt, and Svelte projects.",
+      "features": [
+        {
+          "id": "reversible-project-setup",
+          "type": "changed",
+          "fingerprint": "50e6371f1e976d8c271fcc47b2dd91ea186c73c07e6ad6e7b700ddc1e2b8afe7"
+        },
+        {
+          "id": "native-application-runtime",
+          "type": "changed",
+          "fingerprint": "d7f2b845fc10896bf86cb5a8531cae4a1be41c3530806bfb827b6a6f6e720231"
+        },
+        {
+          "id": "compiler-source-intelligence",
+          "type": "changed",
+          "fingerprint": "c9e4b7e8c9bf8a0689b492263d345597611d0352ebb08616bc0f62f38879d20d"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-react-vue-nuxt-svelte-adapters",
+      "date": "2026-08-02",
+      "summary": "Add built-in React, Vue, Nuxt, and Svelte route discovery with native browser fixtures.",
+      "features": [
+        {
+          "id": "framework-react",
+          "type": "added",
+          "fingerprint": "c8d0f65994dd07d083f0fddf83ba33a5db4b7a9334962d0b815eaaaab9d7ea3c"
+        },
+        {
+          "id": "framework-vue",
+          "type": "added",
+          "fingerprint": "3acd77ed3bcbdd7a065fa2712e12a5e5cc2e841417ca0f8566c5b9f413546750"
+        },
+        {
+          "id": "framework-nuxt",
+          "type": "added",
+          "fingerprint": "0b2b90b28711f31c311343135d07ee1a01fc5ab6e683158c51c5aa403ac2183b"
+        },
+        {
+          "id": "framework-svelte",
+          "type": "added",
+          "fingerprint": "6576faac1cb72fcce895d642149daca089a86d044f4d53fafb53259a869dc6ab"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-system-studio-capture-performance",
+      "date": "2026-08-02",
+      "summary": "Added measured Studio route preloads, batched capture, semantic daemon refresh, coalesced LLM durability, and a thin CLI bootstrap",
+      "features": [
+        {
+          "id": "performance-benchmarks",
+          "type": "changed",
+          "fingerprint": "c8f848c999052b34953c83679864736c187b925e7710c8aadcb28b1410197a18"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-performance-comparison-contract",
+      "date": "2026-08-02",
+      "summary": "Add strict before-after performance comparisons, sub-50 ms hot-path gates, validated graph and scanner fast paths, on-demand Pixi rendering, and a production website performance contract.",
+      "features": [
+        {
+          "id": "performance-benchmarks",
+          "type": "changed",
+          "fingerprint": "b34373ec95b3ecbd190018aed1842fecce114f5c48dfc1ac3edac62a37787d5f"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-explicit-source-roots",
+      "date": "2026-08-02",
+      "summary": "Support explicit nested, adjacent, linked, and absolute application source roots while retaining all durable Topo writes under the project root.",
+      "features": [
+        {
+          "id": "monorepo-project-model",
+          "type": "changed",
+          "fingerprint": "8dc784765b451cbd74e328b6af79c0ff86816cd9752281fcc39639aa404f281a"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-doctor-source-selection",
+      "date": "2026-08-02",
+      "summary": "Report ambiguous mixed-framework project roots through the stable application.source-selection Doctor check with exact LLM-readable evidence and remediation.",
+      "features": [
+        {
+          "id": "doctor-report",
+          "type": "changed",
+          "fingerprint": "a3d2eb2ba6cc0b330677ab60172b0ed224b6a5e7a9e65f1f19af55deb2a619dc"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-contained-source-roots",
+      "date": "2026-08-02",
+      "summary": "Validate rootDir as an existing contained application directory and reject traversal, file targets, and linked escapes before source discovery.",
+      "features": [
+        {
+          "id": "monorepo-project-model",
+          "type": "changed",
+          "fingerprint": "4e4b16cf1147960c1aee29816cd1009cc4348cb0a15c7c1c3b0f88023e24f154"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-preview-event-subscriptions",
+      "date": "2026-08-02",
+      "summary": "The signed preview bridge now exposes bounded exact-origin event subscriptions",
+      "features": [
+        {
+          "id": "preview-gateway",
+          "type": "changed",
+          "fingerprint": "b38b6fba0491344497d6808908a5c9f81e0631b26b4c505ba7c7bd068da07b7f"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-live-flow-tracing",
+      "date": "2026-08-02",
+      "summary": "Signed live preview journeys can now be traced into durable LLM-readable flows",
+      "features": [
+        {
+          "id": "user-flows",
+          "type": "changed",
+          "fingerprint": "f0006edd867074afd4d6356734fc2467c248eb068e3e6ddc464c397d0600837e"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-addressable-component-preview-artifacts",
+      "date": "2026-08-02",
+      "summary": "Addressable component preview variants now display exact captured, failed, unavailable, or uncaptured evidence in Studio",
+      "features": [
+        {
+          "id": "application-atlas",
+          "type": "changed",
+          "fingerprint": "3e16a23efd18d3fca1debc0fc57c1ecd398f549fc26d77526599638bb56c327e"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-route-presentation-runtime-roundtrip",
+      "date": "2026-08-02",
+      "summary": "The managed local-runtime proof now verifies selected Screen by default, a reload-safe zero-frame Map, and return to the same signed native screen.",
+      "features": [
+        {
+          "id": "application-atlas",
+          "type": "changed",
+          "fingerprint": "516e2fa5d6b54135346d003a268e2c2e9b91681567b6be21f47c7be00979baa5"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-addressable-route-presentations",
+      "date": "2026-08-02",
+      "summary": "Routes now open on selected-screen evidence, expose a reload-safe organized map, preserve exact screen identity across presentations, and retain unclipped visual evidence thumbnails.",
+      "features": [
+        {
+          "id": "application-atlas",
+          "type": "changed",
+          "fingerprint": "516e2fa5d6b54135346d003a268e2c2e9b91681567b6be21f47c7be00979baa5"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-addressable-interaction-probes",
+      "date": "2026-08-02",
+      "summary": "Made every route interaction probe independently searchable, selectable, URL-addressable, and reload-safe in the Paper-matched Studio probe view.",
+      "features": [
+        {
+          "id": "interaction-diagnostics",
+          "type": "changed",
+          "fingerprint": "66c7d6b7ae9d2b724a3678ccce28f80acfc72aea931ffc5a9d55cca14d73da14"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-component-evidence-board",
+      "date": "2026-08-02",
+      "summary": "Matched Components to the Paper coverage-and-screen-evidence board, retained the complete topology as an addressable Map mode, and corrected the shared canvas to exact 14px side and bottom insets.",
+      "features": [
+        {
+          "id": "application-atlas",
+          "type": "changed",
+          "fingerprint": "ee5309f9875b9495c3c57b8691cc001f9e2fe67fba20a19f6a7c430605937d52"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-lazy-studio-validation",
+      "date": "2026-08-02",
+      "summary": "Move strict Studio validation out of the static shell, lower initial JavaScript budgets, and enforce the boundary in source, showcase, and packed CLI builds.",
+      "features": [
+        {
+          "id": "performance-benchmarks",
+          "type": "changed",
+          "fingerprint": "ebb3e9706224079ff151b8ea3ca1f64eccfb1341912a44eee03ea43c396364d5"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-same-origin-studio-showcase",
+      "date": "2026-08-02",
+      "summary": "The website now packages a verified, hashed production Studio bundle as its default same-origin demo.",
+      "features": [
+        {
+          "id": "public-website",
+          "type": "changed",
+          "fingerprint": "8c966c2ab7e4a5aaa7004ed2f436b1fbd14710df80f912299d6f3a1992a7da62"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-adapter-conformance-check",
+      "date": "2026-08-02",
+      "summary": "Local adapter scaffolds now have a process-free versioned conformance command that verifies manifest identity, module loading, and framework, preview, or runtime contracts before real-project testing.",
+      "features": [
+        {
+          "id": "adapter-scaffolding",
+          "type": "changed",
+          "fingerprint": "8930ff711ef6fcacaca6fbbd1e9dee513acdf3026c008002d7831e31056433f9"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-editor-evidence-navigation",
+      "date": "2026-08-02",
+      "summary": "Editor now searches complete screen and component inventories, discloses bounded preview limits, and preserves exact finding identity through Doctor navigation.",
+      "features": [
+        {
+          "id": "application-atlas",
+          "type": "changed",
+          "fingerprint": "fbb0cf9aab34955a75cc1c08e0909f326a795e2394e0f30089a1b0d18cd91929"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-doctor-addressable-triage",
+      "date": "2026-08-02",
+      "summary": "Doctor now preserves canonical scopes, shows every finding, copies remediation, and retains exact finding identity through report, search, URL, and reload.",
+      "features": [
+        {
+          "id": "doctor-report",
+          "type": "changed",
+          "fingerprint": "bc1d86efa1757148aa0437cb9e59e8aa8332ae7f9b8b5e2818abe0c54b46d3d8"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-notes-inspect-first",
+      "date": "2026-08-02",
+      "summary": "Made Notes searchable and inspect-first with stable previous/next navigation, disclosed editing, safe cancellation, and production browser contracts.",
+      "features": [
+        {
+          "id": "markdown-notes",
+          "type": "changed",
+          "fingerprint": "fb449085e30433f825200d32e44f9ec5213b2813281ccc242f183078e61cc23d"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-flow-inspect-first",
+      "date": "2026-08-02",
+      "summary": "Made Atlas Flows inspect-first with readable selected-lane framing, compact route-break evidence, disclosed editors, and an ordered step navigator.",
+      "features": [
+        {
+          "id": "user-flows",
+          "type": "changed",
+          "fingerprint": "132d1afc74720657e99de5e679471ec321c801cf7fd97715083581e4bb6bdeb2"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-atlas-focused-navigation",
+      "date": "2026-08-02",
+      "summary": "Top-align selected route regions and keep route and component navigators focused on compact, visible selections.",
+      "features": [
+        {
+          "id": "application-atlas",
+          "type": "changed",
+          "fingerprint": "5d12dcb156634ce31ecd365f21ac03bc8c1139cfd0afbc6705bb2a364c3aaed6"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-llm-schema-benchmark",
+      "date": "2026-08-02",
+      "summary": "Verify every benchmarked LLM record against exported schemas outside the timed projection interval",
+      "features": [
+        {
+          "id": "performance-benchmarks",
+          "type": "changed",
+          "fingerprint": "6e8fa7be23a0f2fbde2eb717169d049ed4ab9334ea49b1dcfa55fb226623e07b"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-indexed-llm-projection",
+      "date": "2026-08-02",
+      "summary": "Index graph relationships once and validate canonical record envelopes without cloning typed payloads",
+      "features": [
+        {
+          "id": "llm-context",
+          "type": "changed",
+          "fingerprint": "f2192ed0fa1021ced834b0c7bc87276d2dd175952c874e771ed9e7fd910efe38"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-incremental-refresh-benchmark",
+      "date": "2026-08-02",
+      "summary": "Measure complete scans and one-file scanner-session refreshes as separate CPU workloads",
+      "features": [
+        {
+          "id": "performance-benchmarks",
+          "type": "changed",
+          "fingerprint": "23231671924ddc0ab7ab0739da501d01aaf563f7e98620a53bc0d352c5c488f2"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-incremental-scanner-session",
+      "date": "2026-08-02",
+      "summary": "Reuse one serialized source snapshot and loaded adapter registry across watched daemon refreshes",
+      "features": [
+        {
+          "id": "compiler-source-intelligence",
+          "type": "changed",
+          "fingerprint": "cebf91e52215ea48d901baf2fdb6a62d4033d9ed109a3860e738b5d5419149db"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-natural-sort-performance",
+      "date": "2026-08-02",
+      "summary": "Reuse one constant-memory natural sorter across Atlas and LLM projection",
+      "features": [
+        {
+          "id": "performance-benchmarks",
+          "type": "changed",
+          "fingerprint": "57c2ae66fe6d4b4afed34d63dc1c1f54c402ed80eea217ac744539dc774f7ea6"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-cli-note-crud",
+      "date": "2026-08-02",
+      "summary": "Complete Markdown note CRUD through the CLI and packed consumer",
+      "features": [
+        {
+          "id": "markdown-notes",
+          "type": "changed",
+          "fingerprint": "0231b0d67ba1023c931882e36a9a883ab29c225aacf5449a4f619330a96707e9"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-canonical-route-hierarchy-context",
+      "date": "2026-08-02",
+      "summary": "Canonical traversable route hierarchy in LLM context",
+      "features": [
+        {
+          "id": "llm-context",
+          "type": "changed",
+          "fingerprint": "1b81cb365d72b9c22ff1c8175d63b1daea854a1061c1e2047ca0806aba20a54a"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-route-map-header-collision",
+      "date": "2026-08-02",
+      "summary": "Collision-safe measured route-map headers",
+      "features": [
+        {
+          "id": "application-atlas",
+          "type": "changed",
+          "fingerprint": "5bcc01e84ba259d1463de847e2617cf377998a376ed94f1fc8d77f7c4e961a75"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-studio-semantic-contrast",
+      "date": "2026-08-02",
+      "summary": "Raised dark and light caption and error token pairs to at least 4.5:1 and made their computed contrast part of every production board check.",
+      "features": [
+        {
+          "id": "local-studio-runtime",
+          "type": "changed",
+          "fingerprint": "819acb99694fe99a44dfde22002c810d47289d9ae59148b3f97fd5683423c07f"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-studio-form-control-contract",
+      "date": "2026-08-02",
+      "summary": "Required every visible Studio input, textarea, and select to retain a native label association and stable name across the production 23-board contract.",
+      "features": [
+        {
+          "id": "local-studio-runtime",
+          "type": "changed",
+          "fingerprint": "4cebf0e8b43fa15e39b410fdf8ec963439ae3e628eddc7f7dbf19a7f500014fd"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-flow-scene-edge-preservation",
+      "date": "2026-08-02",
+      "summary": "Preserved explicit flow edges and selected-step anchoring across balanced multi-row scene layout.",
+      "features": [
+        {
+          "id": "user-flows",
+          "type": "changed",
+          "fingerprint": "62d9102f9610056d915ba127c42d558f8b32174cfe455d3c442f11b953ab3363"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-flow-atlas-balanced-lanes",
+      "date": "2026-08-02",
+      "summary": "Packed variable-width flow lanes into adaptive centered landscape rows with machine-checkable scene geometry.",
+      "features": [
+        {
+          "id": "application-atlas",
+          "type": "changed",
+          "fingerprint": "e56ebf21e38b18797df24b20e35917d3cb0a07e73f7b96afa17b327a33af4641"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-component-atlas-balanced-groups",
+      "date": "2026-08-02",
+      "summary": "Packed component source groups into adaptive centered landscape rows and added machine-checkable scene geometry.",
+      "features": [
+        {
+          "id": "application-atlas",
+          "type": "changed",
+          "fingerprint": "3d8cef4b5ece9d36027e7a1b3e408f9b97ce3230b5caeaf53883ec67066c93c9"
+        }
+      ]
+    },
+    {
+      "id": "route-atlas-balanced-regions",
+      "date": "2026-08-02",
+      "summary": "Balanced and centered route regions into a responsive landscape atlas, made region focus the default, and added deterministic semantic labels over a shared dotted GPU field.",
+      "features": [
+        {
+          "id": "application-atlas",
+          "type": "changed",
+          "fingerprint": "a2353357d3d474a57983274bb69de56e441d02af82650b60e824ed3c6fc2eb37"
+        }
+      ]
+    },
+    {
+      "id": "packed-studio-build-report-v2",
+      "date": "2026-08-02",
+      "summary": "Validate and expose the version-two five-check Studio build report in the isolated packed CLI consumer.",
+      "features": [
+        {
+          "id": "public-cli-package",
+          "type": "changed",
+          "fingerprint": "f66cb1a4a61dfd0bbf152689203efa9a59e7cdaf2891078da0c0bc05a972f12e"
+        }
+      ]
+    },
+    {
+      "id": "studio-lazy-review-export",
+      "date": "2026-08-02",
+      "summary": "Defer the shared review renderer until Export and enforce its reachability and isolation in the version-two Studio build report.",
+      "features": [
+        {
+          "id": "performance-benchmarks",
+          "type": "changed",
+          "fingerprint": "b1eed1d76f20c41e7ce88df1abecadd694f951f445e0711a25c25fc2620c00d6"
+        },
+        {
+          "id": "local-studio-runtime",
+          "type": "changed",
+          "fingerprint": "5851d908cadf5d77f8f8e52b60674473925913d9c36f044cc3cc8869cfe6eabc"
+        },
+        {
+          "id": "review-exports",
+          "type": "changed",
+          "fingerprint": "79865cfb41de5011daa07dde85e9e0efdbbd06b1687f6a91ae843432a1d963b5"
+        }
+      ]
+    },
+    {
+      "id": "studio-async-coordination",
+      "date": "2026-08-02",
+      "summary": "Prevent stale Studio resource hydrations and same-render duplicate actions with latest-commit and exclusive-action leases.",
+      "features": [
+        {
+          "id": "local-studio-runtime",
+          "type": "changed",
+          "fingerprint": "3ac708e69e41619b89e80b10e03487571ba0a3c0521fe60e65453cc41504f9cf"
+        },
+        {
+          "id": "markdown-notes",
+          "type": "changed",
+          "fingerprint": "f6840c59d923b33436be1193f4ef8674eaf5d6e3c90337142227220af338230b"
+        },
+        {
+          "id": "user-flows",
+          "type": "changed",
+          "fingerprint": "2cb140cb686f662017d1ccdef532e6206555c922e2efaef323fc6837bf3f3664"
+        }
+      ]
+    },
+    {
+      "id": "studio-settings-authority",
+      "date": "2026-08-02",
+      "summary": "Made Studio settings authority truthful and functional with sanitized project capture policy, bounded live-frame preferences, explicit runtime diagnostics, and manifest-backed product actions.",
+      "features": [
+        {
+          "id": "local-studio-runtime",
+          "type": "changed",
+          "fingerprint": "b0044c5501dffe1e3da2e3676d11d0ae6750694766e87c191a94e1a4478b5846"
+        },
+        {
+          "id": "screen-capture",
+          "type": "changed",
+          "fingerprint": "b608a090e45ad533f0b941062cb3c860b188bcff50a158493f7d3ae26f5abb1b"
+        },
+        {
+          "id": "interaction-diagnostics",
+          "type": "changed",
+          "fingerprint": "c4825c8cd58a0e7b1f9c67a86e56a91956dc87c12bfa3e7442b394b192ac4576"
+        },
+        {
+          "id": "llm-context",
+          "type": "changed",
+          "fingerprint": "7ce8d46f475dee2e2b9ba1ca02bf9db925bc0cd3b066953687ab5dbafaa9c8c5"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-component-preview-scaffolding",
+      "date": "2026-08-02",
+      "summary": "Added safe one-click component preview drafts with immediate graph refresh and LLM-readable fixture findings.",
+      "features": [
+        {
+          "id": "standalone-component-previews",
+          "type": "changed",
+          "fingerprint": "605874538ece0e374bbc94a1685654c799bc8ab30f6a9d952a3f6f80febb917f"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-studio-selection-links",
+      "date": "2026-08-02",
+      "summary": "Studio deep links now preserve exact screen, component, flow-step, and note selections through bounded stable query identities",
+      "features": [
+        {
+          "id": "application-atlas",
+          "type": "changed",
+          "fingerprint": "dba84c6a5c2ca6e92b34458bf4a1b6624323f035b95e09be3fb70890d4df3ad0"
+        },
+        {
+          "id": "studio-project-search",
+          "type": "changed",
+          "fingerprint": "9a4805245551ddfe27852ddec7d0a4dec300ea28c4c19009d9a7b86f0a6ca956"
+        },
+        {
+          "id": "studio-extension-api",
+          "type": "changed",
+          "fingerprint": "2bbb5b5fd3d5dcdedbad668b6f2c91d4d8823ea4c4e4ca68b4e4231ae6eaef56"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-shared-pixi-host-lifecycle",
+      "date": "2026-08-02",
+      "summary": "All Studio GPU surfaces now share one cancellation-safe Pixi application lifecycle with coalesced resize work and idempotent teardown",
+      "features": [
+        {
+          "id": "application-atlas",
+          "type": "changed",
+          "fingerprint": "bab6d36b41d8f161137d006cf2d3c0941d1ab0a1ebe442ba0937083db454c5d7"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-browser-heap-lifecycle",
+      "date": "2026-08-02",
+      "summary": "Versioned browser performance reports now distinguish active Pixi working heap from retained post-teardown heap using explicit Chromium collection evidence",
+      "features": [
+        {
+          "id": "performance-benchmarks",
+          "type": "changed",
+          "fingerprint": "36a11e8604ce12eecad4e71250b44925fba22d01b4f1533eed99c16cdda074ec"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-stable-atlas-runtime-evidence",
+      "date": "2026-08-02",
+      "summary": "Stable machine-readable route, region, area, and selected-location evidence for the compiled Studio runtime verifier",
+      "features": [
+        {
+          "id": "local-studio-runtime",
+          "type": "changed",
+          "fingerprint": "d135404d18ff7d3748dd44332d1e289660b6b9f48bf575ec38f60e043681ea24"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-adapter-ownership-context",
+      "date": "2026-08-02",
+      "summary": "Added bidirectional adapter ownership relationships for routes, screens, and component previews to bounded LLM context.",
+      "features": [
+        {
+          "id": "llm-context",
+          "type": "changed",
+          "fingerprint": "5b7a21e1766a14284232e05a024bc2b39cc663d4576314b9df1b6377ff345206"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-exact-adapter-membership",
+      "date": "2026-08-02",
+      "summary": "Added exact screen and component membership plus observed third-party framework contributors to the adapter inventory.",
+      "features": [
+        {
+          "id": "adapter-scaffolding",
+          "type": "changed",
+          "fingerprint": "a293afe55eee7d7d7856dfc0a9b3955688def1f2912e8bf6d325e4a84e3a7536"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-route-adapter-provenance",
+      "date": "2026-08-02",
+      "summary": "Preserved exact route-discovery adapter identity on normalized screens and route scenes, and exposed it in Studio.",
+      "features": [
+        {
+          "id": "application-atlas",
+          "type": "changed",
+          "fingerprint": "cbeed8cffbf2e78d1a5a120a2383ba621dae74b1b0ffd149eb98ac4d757e33a0"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-route-map-semantic-focus",
+      "date": "2026-08-02",
+      "summary": "Routes now opens on a readable selected-area view with explicit Area, Region, and Atlas focus controls and quieter selection-aware navigation edges.",
+      "features": [
+        {
+          "id": "application-atlas",
+          "type": "changed",
+          "fingerprint": "0f81a3b5db49070b821fbf59d149fd71b59f596d17a09e7fc3fba5401a9a799a"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-malformed-daemon-runtime-proof",
+      "date": "2026-08-02",
+      "summary": "Extended the production Studio runtime proof to reject a malformed daemon graph before state hydration",
+      "features": [
+        {
+          "id": "performance-benchmarks",
+          "type": "changed",
+          "fingerprint": "b966eea7e8814762361223632ba2e51f5bf5b9af440710ef303f33c5a3abd5cb"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-schema-validated-studio-protocol",
+      "date": "2026-08-02",
+      "summary": "Added runtime schema validation for every Studio graph, resource, note, and flow daemon response",
+      "features": [
+        {
+          "id": "local-studio-runtime",
+          "type": "changed",
+          "fingerprint": "a9e3ab7490dd09a84a700169834211591fb11cd16216439bd8e680e5953348d7"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-offline-studio-runtime-proof",
+      "date": "2026-08-02",
+      "summary": "Extended the Chromium Studio runtime report with empty-offline and fail-closed write evidence",
+      "features": [
+        {
+          "id": "performance-benchmarks",
+          "type": "changed",
+          "fingerprint": "88b5144b2f3277820376671dbecf3a8106ba43eae39cdfe015f4a12d73351131"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-fail-closed-studio-authority",
+      "date": "2026-08-02",
+      "summary": "Made production Studio start empty without demo substitution and reject disconnected note or flow writes",
+      "features": [
+        {
+          "id": "local-studio-runtime",
+          "type": "changed",
+          "fingerprint": "cec8bdf814e97fa4542bf71a92a570eeb994fa6b0e33a1d2db7b316ebd919dc3"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-coherent-fieldbase-demo-catalog",
+      "date": "2026-08-02",
+      "summary": "Replaced numbered demo components with a coherent 128-component source-domain catalog and distinct note evidence",
+      "features": [
+        {
+          "id": "application-atlas",
+          "type": "changed",
+          "fingerprint": "7536fc1165cb87c207166bef7cd48490b2c99d5a275187ecdf22bc149d7ac431"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-02-bounded-diagnostic-quality-gate",
+      "date": "2026-08-02",
+      "summary": "Added a bounded schema-versioned static and runtime diagnostic quality gate with explicit threshold and exit semantics",
+      "features": [
+        {
+          "id": "interaction-diagnostics",
+          "type": "changed",
+          "fingerprint": "b05b6d77ea65eef99224b0b02347f29d9d7f084df7ed1a616a93deaf6da36459"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-browser-benchmark-renderer-budgets",
+      "date": "2026-08-02",
+      "summary": "Keep native GPU texture targets unchanged while enforcing an explicit 1.5x SwiftShader allowance with renderer and native-budget evidence.",
+      "features": [
+        {
+          "id": "performance-benchmarks",
+          "type": "changed",
+          "fingerprint": "432491208526ea03fd6012f8095dc5382a85429f5d15efaf288b97ee9d1059d3"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-cli-release-contract",
+      "date": "2026-08-02",
+      "summary": "Added an exact consumer-tested OIDC CLI release artifact contract",
+      "features": [
+        {
+          "id": "public-cli-package",
+          "type": "changed",
+          "fingerprint": "fca35e7d04acec5e1c03b4281bba0270b5d049e50fc158f82cb9df795425fc14"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-ci-workflow-contract",
+      "date": "2026-08-02",
+      "summary": "Governed executable CI and release workflow contracts",
+      "features": [
+        {
+          "id": "documentation-governance",
+          "type": "changed",
+          "fingerprint": "1349c752753115ce828665b4776a70c9c263a36895a5c2cfc613f927587dcdc8"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-component-atlas-context-v5",
+      "date": "2026-08-02",
+      "summary": "Added schema-v5 component atlas placement, configured project relationships, and bounded source-group coverage to canonical component records.",
+      "features": [
+        {
+          "id": "llm-context",
+          "type": "changed",
+          "fingerprint": "2966df3c34e783ff4f3c3bb9400e1bae8d1a9e36fad55908bdf39fefc1fe6b45"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-component-atlas-organization",
+      "date": "2026-08-02",
+      "summary": "Organized the component atlas into shared automatic or configured source domains with searchable Studio navigation, exact scene membership, coverage aggregates, and selected-group focus.",
+      "features": [
+        {
+          "id": "application-atlas",
+          "type": "changed",
+          "fingerprint": "c8fc65d90dcf0393dfa76b9934b5e9164fd7dc6ea1f7c9b885afb8963fae0ef1"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-preview-runtime-bridge",
+      "date": "2026-08-02",
+      "summary": "Inject a bounded credential-free runtime bridge into eligible signed preview HTML",
+      "features": [
+        {
+          "id": "preview-gateway",
+          "type": "changed",
+          "fingerprint": "b4cb7fc89b2b9870dc082b4f6a7762d8678c3876f5536e610271446f12e78b9e"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-live-element-anchor-evidence",
+      "date": "2026-08-02",
+      "summary": "Record current semantic element evidence when placing notes on signed live previews",
+      "features": [
+        {
+          "id": "markdown-notes",
+          "type": "changed",
+          "fingerprint": "09bc775b5f50776872b7e5aa5a3a20445b09da3bccf1e9252fbd08ee0c9b0204"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-note-placement-capture",
+      "date": "2026-08-02",
+      "summary": "Added deliberate normalized point and region placement on exact screen evidence, with stale-anchor cleanup and browser verification.",
+      "features": [
+        {
+          "id": "markdown-notes",
+          "type": "changed",
+          "fingerprint": "4dbce46e86b0bd5b457ca0c97ce86395203c7bf39f11476ebf876e3345544ea4"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-typed-note-composer",
+      "date": "2026-08-02",
+      "summary": "Studio now composes complete typed notes with explicit screen, flow-step, flow, or free-standing targets before writing Markdown.",
+      "features": [
+        {
+          "id": "markdown-notes",
+          "type": "changed",
+          "fingerprint": "a9f307897c9d0e0fd51c0db92faaebb954513fb48768df01ddbd52f0d090f2d6"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-notes-screen-evidence",
+      "date": "2026-08-01",
+      "summary": "Notes detail now uses the shared Pixi evidence stage, canonical route navigation, exact note-to-screen resolution, and recorded normalized anchor overlays.",
+      "features": [
+        {
+          "id": "markdown-notes",
+          "type": "changed",
+          "fingerprint": "db63a3b1c192b285641d55fb1d9ec540339e95845c956a8828438331caeeb07a"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-doctor-route-navigator",
+      "date": "2026-08-01",
+      "summary": "Replaced repeated framework filenames in Doctor with canonical routes using the shared hierarchy-aware route ordering.",
+      "features": [
+        {
+          "id": "doctor-report",
+          "type": "changed",
+          "fingerprint": "f7b4f1ba79432c09d9ba5f0f657f4664e311d7fd4b0a090bfba3190a9ef02653"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-doctor-screen-evidence",
+      "date": "2026-08-01",
+      "summary": "Replaced the static Doctor findings mock with the shared Pixi hybrid screen-evidence stage and exact finding-to-screen selection.",
+      "features": [
+        {
+          "id": "doctor-report",
+          "type": "changed",
+          "fingerprint": "f7b4f1ba79432c09d9ba5f0f657f4664e311d7fd4b0a090bfba3190a9ef02653"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-route-scene-v4",
+      "date": "2026-08-01",
+      "summary": "Updated the local runtime contract to the scene-v4 regional route map and exact region telemetry.",
+      "features": [
+        {
+          "id": "local-studio-runtime",
+          "type": "changed",
+          "fingerprint": "765586ddfdf4ce93797ff3a83018ab5b52ad4c46d25d566863dabcf3f15c9846"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-route-regions",
+      "date": "2026-08-01",
+      "summary": "Added automatic route regions, selected-region framing, and exact region membership across Studio, daemon, MCP, and LLM route context.",
+      "features": [
+        {
+          "id": "application-atlas",
+          "type": "changed",
+          "fingerprint": "72e62fb730b5eb0b114d1a9e5907e7ff42b4b3318b1d614b321e42233b5c0197"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-parameterized-route-previews",
+      "date": "2026-08-01",
+      "summary": "Added project-owned concrete preview paths for parameterized routes across capture, live frames, diagnostics, Doctor, Studio, and LLM context.",
+      "features": [
+        {
+          "id": "screen-capture",
+          "type": "changed",
+          "fingerprint": "ca8ed326569c00d22405c52d218d92859a3fb48671ef52571d354e9fb7244d75"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-project-lifecycle",
+      "date": "2026-08-01",
+      "summary": "Added versioned topo migrate and topo update workflows with safe package reconciliation and sanitized LLM lifecycle evidence.",
+      "features": [
+        {
+          "id": "reversible-project-setup",
+          "type": "changed",
+          "fingerprint": "864013708873434de20c9c69fa28d6bb59705460a4d27d243b949c3e54e7ac41"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-scene-v3-local-runtime",
+      "date": "2026-08-01",
+      "summary": "Updated the complete local runtime contract to require the exact scene-v3 route map.",
+      "features": [
+        {
+          "id": "local-studio-runtime",
+          "type": "changed",
+          "fingerprint": "d86564431e2e1b378d54a110205b481c946893e6a79daaf6e970b97f3b0858f8"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-route-hierarchy-atlas",
+      "date": "2026-08-01",
+      "summary": "Added scene-v3 route ancestry, smart automatic districts, hierarchy lanes, and bounded snapshot thumbnails.",
+      "features": [
+        {
+          "id": "application-atlas",
+          "type": "changed",
+          "fingerprint": "18e1f6e082c710a156ddb293fcf6683c86d1a5138a8f8a32559695582d144e22"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-adapter-inventory",
+      "date": "2026-08-01",
+      "summary": "Added a versioned adapter inventory across daemon, Studio, watcher events, LLM context, and MCP-readable records.",
+      "features": [
+        {
+          "id": "adapter-scaffolding",
+          "type": "changed",
+          "fingerprint": "c3598eb369ad965e0bcf6de0dfb22d00edfd140a7643c41156fad3930e5688d3"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-adapter-context-v4",
+      "date": "2026-08-01",
+      "summary": "Added schema-v4 adapter manifest records, malformed-source issues, bounded queries, and MCP discovery.",
+      "features": [
+        {
+          "id": "llm-context",
+          "type": "changed",
+          "fingerprint": "8b47dd1314d0c92f31cc1754bfbd38266b38aba7e99aa61ee500d350cbbb50fb"
+        },
+        {
+          "id": "local-mcp",
+          "type": "changed",
+          "fingerprint": "234378b0938ee550ea01b3161f6128077bbad18215af853e0b2ba6f4cff22669"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-adapter-scaffolding",
+      "date": "2026-08-01",
+      "summary": "Added collision-safe local adapter scaffolding for framework, component-preview, and application-runtime extensions.",
+      "features": [
+        {
+          "id": "adapter-scaffolding",
+          "type": "added",
+          "fingerprint": "b2b40c9342433c68ef25e2b4c289bdf4efaed16079e20995eeec70f40e30be98"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-balanced-route-map",
+      "date": "2026-08-01",
+      "summary": "Balanced large route districts and emphasized selected-route connections while retaining complete graph evidence.",
+      "features": [
+        {
+          "id": "application-atlas",
+          "type": "changed",
+          "fingerprint": "4bb81fb89e42ffba79e88f0e22e5fae5eedff1a87aa4ad162b173a1f195c1a89"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-mcp-route-organization",
+      "date": "2026-08-01",
+      "summary": "Applied project-owned route organization consistently to MCP atlas resources and tools.",
+      "features": [
+        {
+          "id": "local-mcp",
+          "type": "changed",
+          "fingerprint": "7a1b2438f5fbd2021f828724e8a75d387bd81939f3405c8d71d814aab28ddf82"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-atlas-context-relationships",
+      "date": "2026-08-01",
+      "summary": "Added topo.config.ts source evidence, organizes-route relationships, and bounded query coverage for atlas policy.",
+      "features": [
+        {
+          "id": "llm-context",
+          "type": "changed",
+          "fingerprint": "921c4a178c0f23007008da4da6c687a1d699efcdafc9cc5e977e837567b423c3"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-route-family-district-cohesion",
+      "date": "2026-08-01",
+      "summary": "Made route-family grouping state-cohesive before district projection and reused one district model for both Atlas views.",
+      "features": [
+        {
+          "id": "application-atlas",
+          "type": "changed",
+          "fingerprint": "58007d90251c61f9c347b56d3fc721ede1bcb6456a51ec22844bf50397da4e75"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-project-route-organization",
+      "date": "2026-08-01",
+      "summary": "Added keyed project-owned route districts shared by Studio, daemon scenes, LLM context, and MCP.",
+      "features": [
+        {
+          "id": "application-atlas",
+          "type": "changed",
+          "fingerprint": "58007d90251c61f9c347b56d3fc721ede1bcb6456a51ec22844bf50397da4e75"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-runtime-route-map-drilldown",
+      "date": "2026-08-01",
+      "summary": "Proved the complete local runtime from a frame-free scene-v2 route map into one signed native Screen-mode iframe.",
+      "features": [
+        {
+          "id": "performance-benchmarks",
+          "type": "changed",
+          "fingerprint": "82b39a1b3b85e99ea01e5bbeae70b35490d45a590ced63f683f9294b7022061f"
+        },
+        {
+          "id": "local-studio-runtime",
+          "type": "changed",
+          "fingerprint": "b3ae9aef366e5e1825cb8bf200175b0feb8d907257223e99e486ce727a41007d"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-route-family-mcp-state-coverage",
+      "date": "2026-08-01",
+      "summary": "Verified MCP route scenes preserve every screen state within each route family.",
+      "features": [
+        {
+          "id": "local-mcp",
+          "type": "changed",
+          "fingerprint": "dc5df7dd4c8efd478a5543e15445266c1bb9f6f51edcad8d6330903da48e0768"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-route-family-overview-map",
+      "date": "2026-08-01",
+      "summary": "Added an overview-first compact route-family map with exact scene-v2 organization and full-size screen drill-down.",
+      "features": [
+        {
+          "id": "application-atlas",
+          "type": "changed",
+          "fingerprint": "77dffa18bfc56e425daef3feb05c72e54d88c1f93aa255bbb9f272391b32b1e0"
+        },
+        {
+          "id": "llm-context",
+          "type": "changed",
+          "fingerprint": "3f3660aec47b059caa62df536a2489f13f1456467f47811fe5c597106977493d"
+        },
+        {
+          "id": "local-mcp",
+          "type": "changed",
+          "fingerprint": "dc5df7dd4c8efd478a5543e15445266c1bb9f6f51edcad8d6330903da48e0768"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-compiler-source-intelligence",
+      "date": "2026-08-01",
+      "summary": "Topo now uses native Oxc parsing for compiler-grade imports, exports, required-prop evidence, transitive component coverage, bounded unchanged-file reuse, and source-located parser findings.",
+      "features": [
+        {
+          "id": "compiler-source-intelligence",
+          "type": "added",
+          "fingerprint": "05b0939d9138f3ebaa639d6ef0552e071cd4a9a39a169cb04f314e720d374eac"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-studio-project-search",
+      "date": "2026-08-01",
+      "summary": "Studio now searches canonical project records, destinations, and actions through one deterministic keyboard-navigable palette with stable selection targets.",
+      "features": [
+        {
+          "id": "studio-project-search",
+          "type": "added",
+          "fingerprint": "38078d1402ba326e084a4fa4eabcd4c164d31b51c6e4e02793d9818a4748aadd"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-route-districts",
+      "date": "2026-08-01",
+      "summary": "Routes now use one deterministic district model for hierarchy-aware navigation, GPU overview labels, selected-area focus, daemon scenes, and MCP reads.",
+      "features": [
+        {
+          "id": "application-atlas",
+          "type": "changed",
+          "fingerprint": "bfb28fd6f09e73c3323760131c565ed519cb62338a5cf512c7153098b4fa8c31"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-packed-cli-esm-interop",
+      "date": "2026-08-01",
+      "summary": "Kept pngjs external to the ESM bundle as an explicit runtime dependency so installed Topo tarballs run through Node-compatible CommonJS interop.",
+      "features": [
+        {
+          "id": "public-cli-package",
+          "type": "changed",
+          "fingerprint": "1c767006f0bf67482edde73acb21e9862ea14837ebfb7cbd27fa52b2cc1b6ed7"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-open-design-shell-contract",
+      "date": "2026-08-01",
+      "summary": "Enforced the Open Design shell with borderless structural surfaces, one exact header divider, rounded canvases, and a 23-board browser regression check.",
+      "features": [
+        {
+          "id": "application-atlas",
+          "type": "changed",
+          "fingerprint": "74358f6cf26457df814e7f3961e01c7d1d1864129a596e6e1017d3e55ec23a77"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-flow-authoring-lifecycle",
+      "date": "2026-08-01",
+      "summary": "Added collision-safe atomic flow CRUD, complete CLI commands, optimistic Studio branching authoring, daemon item endpoints, and live LLM/runtime verification.",
+      "features": [
+        {
+          "id": "user-flows",
+          "type": "changed",
+          "fingerprint": "0c7aab2e5a5bb11cd4ab20e6d1d4304b188bfed0bf0a6f5cc6cf990fdb36466a"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-serialized-project-state",
+      "date": "2026-08-01",
+      "summary": "Serialized all independent stores for one project state path so concurrent capture, job, and baseline writes remain atomic on Windows.",
+      "features": [
+        {
+          "id": "visual-baselines",
+          "type": "changed",
+          "fingerprint": "5bbeb9c49484d5d6de2d427c858273a31c7c3f676e22b0032cdf56eb727aa48b"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-exact-origin-visual-evidence",
+      "date": "2026-08-01",
+      "summary": "Allowed snapshot, baseline, and diff images from only the runtime's exact daemon origin under the compiled Studio CSP.",
+      "features": [
+        {
+          "id": "local-studio-runtime",
+          "type": "changed",
+          "fingerprint": "0f2b5d3ccef738ba9b3c8d99194cc6319b17565b3cdbc964834157a7df82ee16"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-open-design-shell-and-visual-reads",
+      "date": "2026-08-01",
+      "summary": "Matched the Open Design shell with a checked rounded canvas viewport and extended benchmark, LLM, and MCP coverage for visual evidence.",
+      "features": [
+        {
+          "id": "application-atlas",
+          "type": "changed",
+          "fingerprint": "93e3e84763c63c1a962464b78afda8300d6ea235f7a76e0d094159739b09f057"
+        },
+        {
+          "id": "performance-benchmarks",
+          "type": "changed",
+          "fingerprint": "24cfe90d3cf2f04aa2aea44b785fe21406c3bc260b5963f2a70f97da88ab9bb0"
+        },
+        {
+          "id": "llm-context",
+          "type": "changed",
+          "fingerprint": "3f3660aec47b059caa62df536a2489f13f1456467f47811fe5c597106977493d"
+        },
+        {
+          "id": "local-mcp",
+          "type": "changed",
+          "fingerprint": "190090e4855a0ed005fdb8aa7627a51cb70c57959222bf0a350c8effbca98e0e"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-visual-baselines",
+      "date": "2026-08-01",
+      "summary": "Added explicit local visual baselines, hash-fast pixel comparison, diff artifacts, and Studio, daemon, LLM, and MCP evidence.",
+      "features": [
+        {
+          "id": "visual-baselines",
+          "type": "added",
+          "fingerprint": "1892689a1fdab8d755f4e034e9f1ec03686f8b981ad0950e73fd9621be0f05e0"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-configured-component-preview-contract",
+      "date": "2026-08-01",
+      "summary": "Configured component preview and provenance contract",
+      "features": [
+        {
+          "id": "performance-benchmarks",
+          "type": "changed",
+          "fingerprint": "5b11c6521d4a8424272b46cdc77a70588956f41a0f6bedfa04e1b82743a0011e"
+        },
+        {
+          "id": "llm-context",
+          "type": "changed",
+          "fingerprint": "2900662c129e94842b6eac64e1f57c3beedd10244286175c53ddebf40e20db95"
+        },
+        {
+          "id": "standalone-component-previews",
+          "type": "changed",
+          "fingerprint": "c0b979621f71198230f45fa9bf960cde066a8731e7e007aa8527edc007bd9845"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-complete-local-runtime-contract",
+      "date": "2026-08-01",
+      "summary": "Complete local runtime and live Studio workflow contract",
+      "features": [
+        {
+          "id": "performance-benchmarks",
+          "type": "changed",
+          "fingerprint": "c916abd9a4ea3c5b3f5c6fc07e6c70133c5adffe4fd205c31c1e73eb62f886df"
+        },
+        {
+          "id": "local-studio-runtime",
+          "type": "changed",
+          "fingerprint": "172f04eb46a149e35b7473bed30a912a360523fe20243f6e9ff862be63da3c6c"
+        },
+        {
+          "id": "native-application-runtime",
+          "type": "changed",
+          "fingerprint": "1254dd8f953b6f1010d3425849fa9ff93ce2d0a46e9f7ae495d89122dea880d2"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-studio-board-browser-contract",
+      "date": "2026-08-01",
+      "summary": "Exact 23-board production browser contract and CSP-safe demo textures",
+      "features": [
+        {
+          "id": "application-atlas",
+          "type": "changed",
+          "fingerprint": "dd3a1160e77f941b6ac74a0b81a78d8fbbe07ff1c32d56f3911ce72ef284a586"
+        },
+        {
+          "id": "performance-benchmarks",
+          "type": "changed",
+          "fingerprint": "3db5d4fa299c709d226b373d0a217dc967fbc948959326cda6bf02e69bccdde9"
+        },
+        {
+          "id": "studio-extension-api",
+          "type": "changed",
+          "fingerprint": "b462f71af0b2ef7407b0fb85f9dcf30bd69ff8847e3ece6fd041b679611ea8c7"
+        },
+        {
+          "id": "local-studio-runtime",
+          "type": "changed",
+          "fingerprint": "4f566cc86ec505e9236869f3f276ebb1c29ae8b6df63319e854ba46867c7cf50"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-studio-built-in-patches",
+      "date": "2026-08-01",
+      "summary": "One-field installed Studio patches preserve built-in components and command behavior while new entries require only their runtime target",
+      "features": [
+        {
+          "id": "studio-extension-api",
+          "type": "changed",
+          "fingerprint": "11f7bdb562376b327218783dc1688afaf2e7be298f57fff5d0fe50114893f7ec"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-studio-command-target-validation",
+      "date": "2026-08-01",
+      "summary": "Fail-safe validation for declarative Studio command destinations",
+      "features": [
+        {
+          "id": "studio-extension-api",
+          "type": "changed",
+          "fingerprint": "11f7bdb562376b327218783dc1688afaf2e7be298f57fff5d0fe50114893f7ec"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-project-studio-manifest",
+      "date": "2026-08-01",
+      "summary": "Project-owned loopback Studio destinations and commands through typed config, daemon delivery, sandboxed rendering, packaged consumer proof, and canonical LLM context",
+      "features": [
+        {
+          "id": "studio-extension-api",
+          "type": "changed",
+          "fingerprint": "11f7bdb562376b327218783dc1688afaf2e7be298f57fff5d0fe50114893f7ec"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-bounded-job-history",
+      "date": "2026-08-01",
+      "summary": "Bounded terminal job retention with active-job preservation and explicit pruning evidence",
+      "features": [
+        {
+          "id": "llm-context",
+          "type": "changed",
+          "fingerprint": "f811d88433fbb0630b5482e1dfa0ca7d82ce7bf05a623884a015f6ed99d699ca"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-simple-studio-customization",
+      "date": "2026-08-01",
+      "summary": "Minimal Studio customization with derived defaults, function commands, partial edits, and explicit removal lists",
+      "features": [
+        {
+          "id": "studio-extension-api",
+          "type": "changed",
+          "fingerprint": "a8cbb3a4bda7f440334bd41a55880dd4a5c2336a29a6adf6a8a612e7b88def7e"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-derived-cache-lifecycle",
+      "date": "2026-08-01",
+      "summary": "Symlink-safe derived cache inspection and cleanup across CLI, daemon, and Studio",
+      "features": [
+        {
+          "id": "cache-management",
+          "type": "added",
+          "fingerprint": "7b7d337737825110599479f9c4fb9cd429a83ddaa071a21f0afe7780b90389e2"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-next-app-router-compatibility",
+      "date": "2026-08-01",
+      "summary": "Next App Router graph-state and browser compatibility coverage",
+      "features": [
+        {
+          "id": "performance-benchmarks",
+          "type": "changed",
+          "fingerprint": "bb03db122f84087790fd90df057275fa65e93397a93b5de4024d6c7818dfaea7"
+        },
+        {
+          "id": "framework-next",
+          "type": "changed",
+          "fingerprint": "9af40570e99a20716b0b90cadadbc96087df2190c89c65dea4121d0faa4e354a"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-current-tanstack-start-compatibility",
+      "date": "2026-08-01",
+      "summary": "Current TanStack Start detection and executable SSR compatibility fixture",
+      "features": [
+        {
+          "id": "performance-benchmarks",
+          "type": "changed",
+          "fingerprint": "0faa3bf171b39f4675bed742df3d5b0de6c29ba155b3ba1d124b5e4e42b63123"
+        },
+        {
+          "id": "native-application-runtime",
+          "type": "changed",
+          "fingerprint": "ae559e309fd189c954ba90784511f56c28c07232b9e52894f026d03a97b1a0a1"
+        },
+        {
+          "id": "framework-tanstack",
+          "type": "changed",
+          "fingerprint": "17d30a6a75784e289e81396c4bd0473a6f6c9bf710a7d4774fbd4abda90a846e"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-framework-compatibility-fixtures",
+      "date": "2026-08-01",
+      "summary": "Executable Next Pages and reusable native framework compatibility verification",
+      "features": [
+        {
+          "id": "performance-benchmarks",
+          "type": "changed",
+          "fingerprint": "d2b67aaf9b2409881ed38f4b287665a9bbc6cad3da07de88345100abd8725e7a"
+        },
+        {
+          "id": "native-application-runtime",
+          "type": "changed",
+          "fingerprint": "8825551267a878e31dc118c51d4daa94a19b2760073cdb59d41dce63e925616f"
+        },
+        {
+          "id": "framework-next",
+          "type": "changed",
+          "fingerprint": "2e5ca7ea295f54b37b5ae7031037b08c246de6a1855f1f988651f45ae7957cdc"
+        },
+        {
+          "id": "framework-tanstack",
+          "type": "changed",
+          "fingerprint": "28af08dad10b3d0d0cab90e994fbd43406cb49f4192924cb8032e3ee5dbf0766"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-bounded-gpu-texture-lifecycle",
+      "date": "2026-08-01",
+      "summary": "Bounded observable GPU snapshot texture lifecycle and browser pressure proof",
+      "features": [
+        {
+          "id": "application-atlas",
+          "type": "changed",
+          "fingerprint": "7e17546561549b660604b1870f1953795ae21c223a4f855f3ddd057741652c00"
+        },
+        {
+          "id": "performance-benchmarks",
+          "type": "changed",
+          "fingerprint": "0d09a6e35e599538c7684cef2962e8469a496e26675654f0be21ef3439e7d544"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-storybook-runtime-capture",
+      "date": "2026-08-01",
+      "summary": "Real Storybook index resolution and Chromium component capture contract",
+      "features": [
+        {
+          "id": "performance-benchmarks",
+          "type": "changed",
+          "fingerprint": "cb707c127315e273af5ff84ba5a15a2364817b04f0361ce30459aa404bf6d6c5"
+        },
+        {
+          "id": "screen-capture",
+          "type": "changed",
+          "fingerprint": "4c89e54d4d3aeb0ec3a96ef97992ef0ff2bab1170215ba2c4c9c272ba3d8653b"
+        },
+        {
+          "id": "storybook-ingestion",
+          "type": "changed",
+          "fingerprint": "77cc0ca745ef061cfdc5ef380408797e6eea4f839d2f98ed147745145fcb0638"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-signed-preview-profile-runtime",
+      "date": "2026-08-01",
+      "summary": "Signed preview profiles across gateway, daemon, Studio, and browser verification",
+      "features": [
+        {
+          "id": "application-atlas",
+          "type": "changed",
+          "fingerprint": "0b0ea02371ac0f12118b823983c40b744d81f87593a5cc88c9999ba35be8ef39"
+        },
+        {
+          "id": "performance-benchmarks",
+          "type": "changed",
+          "fingerprint": "68816536705fd6cc71763424ac139453bf918afc4704743da53e3e4d3d0fb153"
+        },
+        {
+          "id": "local-studio-runtime",
+          "type": "changed",
+          "fingerprint": "29821ff19ce43e04c06d49a28e52e38aee62cb18d859702f03fba5833c3748ec"
+        },
+        {
+          "id": "llm-context",
+          "type": "changed",
+          "fingerprint": "2303cae527e50ff734fb885e138d6b34e6cb95dcc9ede0f3bcc169bf79595a74"
+        },
+        {
+          "id": "preview-gateway",
+          "type": "changed",
+          "fingerprint": "b3a888e48eb6ee1e0794b1d8fe9f04cf9ca2f128164f285b191d189a26037f2e"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-lazy-studio-loading-contract",
+      "date": "2026-08-01",
+      "summary": "Deferred Studio destinations and Pixi behind simple keyed customization with enforced machine-readable build and browser loading evidence.",
+      "features": [
+        {
+          "id": "performance-benchmarks",
+          "type": "changed",
+          "fingerprint": "92c1553a3bc1b37877584ac83f9861f4b5416788105f39878b1fc694cdbea877"
+        },
+        {
+          "id": "studio-extension-api",
+          "type": "changed",
+          "fingerprint": "3870889d6a88fe2de69497420b7131877459a0785a20800be9ed1d399f9e3016"
+        },
+        {
+          "id": "local-studio-runtime",
+          "type": "changed",
+          "fingerprint": "f32a32b56b4df5e19e6c55692cff7a6cc1e4d5b1f2609d194bb5260c00d48de0"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-canonical-doctor-report",
+      "date": "2026-08-01",
+      "summary": "Added one sanitized, evidence-bearing Doctor report across CLI, daemon, Studio, context files, and MCP.",
+      "features": [
+        {
+          "id": "doctor-report",
+          "type": "added",
+          "fingerprint": "3ff5848af22295af41243881acdfb01c46b7c5738b2b44010cfe4eeaad83b262"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-canonical-review-exports",
+      "date": "2026-08-01",
+      "summary": "Added one deterministic Markdown, SARIF, and standalone HTML review-export contract across Studio, daemon, CLI, and MCP-compatible callers.",
+      "features": [
+        {
+          "id": "review-exports",
+          "type": "added",
+          "fingerprint": "c19a1d5dd475052d97d2617508c3cba4f6cd826664068065b95d6429041a11f3"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-packaged-cli-preview",
+      "date": "2026-08-01",
+      "summary": "Self-contained CLI and Studio tarball now passes isolated consumer installation checks",
+      "features": [
+        {
+          "id": "public-cli-package",
+          "type": "changed",
+          "fingerprint": "7fd138d6e17a6a273166b54e7f4e925fb80d533d7689319842ad6da437743982"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-reversible-project-setup",
+      "date": "2026-08-01",
+      "summary": "Transactional project detection, planning, setup, and hash-verified uninstall",
+      "features": [
+        {
+          "id": "reversible-project-setup",
+          "type": "added",
+          "fingerprint": "771cb25535fcb438f73d08623fb44e4306e0a07e8af18c982441cadda6135f5e"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-studio-customize-helper",
+      "date": "2026-08-01",
+      "summary": "Studio customization now starts from built-ins through one customizeStudio object",
+      "features": [
+        {
+          "id": "studio-extension-api",
+          "type": "changed",
+          "fingerprint": "9ceaaafb2ba33414e6f034e26f5c37d14e7d9d6d4956b968865511bcfd88f709"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-llm-context-v2-roots",
+      "date": "2026-08-01",
+      "summary": "Added explicit project and source root ownership to the canonical LLM context schema.",
+      "features": [
+        {
+          "id": "llm-context",
+          "type": "changed",
+          "fingerprint": "52987d128caf969439d9d2cae121641d8259c87ca05002e434581376d2bca4df"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-monorepo-project-model",
+      "date": "2026-08-01",
+      "summary": "Separated project-owned durable context from nested application source across the CLI, daemon, adapters, and LLM schema.",
+      "features": [
+        {
+          "id": "monorepo-project-model",
+          "type": "added",
+          "fingerprint": "7ada81c0eee30aca4bb1cfcd8b5a66bfd10b392c4de3304edf2d721b1e0b2bde"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-native-application-runtime",
+      "date": "2026-08-01",
+      "summary": "Added managed native application runtime adapters and topo dev lifecycle orchestration.",
+      "features": [
+        {
+          "id": "native-application-runtime",
+          "type": "added",
+          "fingerprint": "18c12c07bd0e6f921511ff34f9a51e38e265b04f70b000096049f5d73767aacb"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-one-command-local-studio",
+      "date": "2026-08-01",
+      "summary": "Added a loopback production Studio host and made topo dev launch it with the project daemon.",
+      "features": [
+        {
+          "id": "local-studio-runtime",
+          "type": "added",
+          "fingerprint": "1196bf03564413f6c8865a347e47f5ddf624ebb6afafa8b62adb2a33e744a994"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-source-backed-studio-evidence",
+      "date": "2026-08-01",
+      "summary": "Replaced fake visual editing controls with source-backed screen evidence and public Select, Pan, and Fit canvas controls.",
+      "features": [
+        {
+          "id": "application-atlas",
+          "type": "changed",
+          "fingerprint": "2dd955db929ecb0e34667414b36fdd608f2080177912428b0789e9846993ba7a"
+        },
+        {
+          "id": "studio-extension-api",
+          "type": "changed",
+          "fingerprint": "360751719885f1e5ef6b3dd1f7e8da4ce544d453aeb54211950aedf798adaf1b"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-context-commit-boundary",
+      "date": "2026-08-01",
+      "summary": "Context reads now wait for the active watched-source evidence lifecycle",
+      "features": [
+        {
+          "id": "screen-capture",
+          "type": "changed",
+          "fingerprint": "cafdb7219b6526dfa95c020e359a524796dd4e3f6428e8576f712f7e9139b7bc"
+        },
+        {
+          "id": "llm-context",
+          "type": "changed",
+          "fingerprint": "042f70d6077e9583ccaa522761d1e033fb45ffbeda7e5dd1228b7e85d06b6328"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-watched-evidence-refresh",
+      "date": "2026-08-01",
+      "summary": "Watched source changes now refresh scoped visual evidence, Studio resources, and canonical LLM context",
+      "features": [
+        {
+          "id": "application-atlas",
+          "type": "changed",
+          "fingerprint": "997dd5f2e5fc652f2ca3cec84c82c75fb5d866c11784248bae92922b22df1257"
+        },
+        {
+          "id": "screen-capture",
+          "type": "changed",
+          "fingerprint": "cafdb7219b6526dfa95c020e359a524796dd4e3f6428e8576f712f7e9139b7bc"
+        },
+        {
+          "id": "llm-context",
+          "type": "changed",
+          "fingerprint": "042f70d6077e9583ccaa522761d1e033fb45ffbeda7e5dd1228b7e85d06b6328"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-viewport-culling-and-pixi-artifacts",
+      "date": "2026-08-01",
+      "summary": "Viewport-delta Pixi rendering and deterministic PNG artifact loading",
+      "features": [
+        {
+          "id": "application-atlas",
+          "type": "changed",
+          "fingerprint": "e45f4a1800971273d650c245dd508711e956b07466c8bcb40d3f172a485630f0"
+        },
+        {
+          "id": "performance-benchmarks",
+          "type": "changed",
+          "fingerprint": "529a7637e8dc1c316b82a6e427f21bf257b4e02213e281d692622d2d539919eb"
+        },
+        {
+          "id": "screen-capture",
+          "type": "changed",
+          "fingerprint": "39fe77d236c182b6429ceadfd3fb916c3a44cba47e78b35c751914ecaa37a43a"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-browser-hybrid-performance",
+      "date": "2026-08-01",
+      "summary": "Bounded live-frame Studio promotion and real Chromium Pixi performance evidence",
+      "features": [
+        {
+          "id": "application-atlas",
+          "type": "changed",
+          "fingerprint": "674f52f2a172440ffdd09b35ee9c4b226c538688f8efe359cc58eace48bc65ce"
+        },
+        {
+          "id": "performance-benchmarks",
+          "type": "changed",
+          "fingerprint": "9cac129448b482a2f7dec368368cd1ea1f38db9de2542bf823c80ae4abfdafe6"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-performance-benchmark-contract",
+      "date": "2026-08-01",
+      "summary": "Executable scan-to-scene performance profiles with p95 budgets and agent-readable reports",
+      "features": [
+        {
+          "id": "performance-benchmarks",
+          "type": "added",
+          "fingerprint": "80491d75afeab92863aa87c0cad30d6e78552b9e87856fe9f47963a8284fd7c7"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-tanstack-runtime-compatibility",
+      "date": "2026-08-01",
+      "summary": "Generated-tree-first TanStack fixture and explicit-disabled diagnostic accuracy",
+      "features": [
+        {
+          "id": "framework-tanstack",
+          "type": "changed",
+          "fingerprint": "0c622c8f4203eade6a2b7b428c1ca0d15f335dae413e3e1b259fc579af9a50b4"
+        },
+        {
+          "id": "interaction-diagnostics",
+          "type": "changed",
+          "fingerprint": "85882656f2bbcdfc754f8fbd99427988166c862560e330e5db21330b63e6cdce"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-composed-studio-shell",
+      "date": "2026-08-01",
+      "summary": "Registry-driven Studio routing, navigation, commands, chrome, and status",
+      "features": [
+        {
+          "id": "application-atlas",
+          "type": "changed",
+          "fingerprint": "f59f8f8ebfdaeaf9a1be7d24908af36f2d02292d2c4ec842caa18d9983105b89"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-studio-extension-api",
+      "date": "2026-08-01",
+      "summary": "Typed Studio destination and command composition API",
+      "features": [
+        {
+          "id": "studio-extension-api",
+          "type": "added",
+          "fingerprint": "b297aebac24b632b16253269e7999dacab2bc68222930e04d00e78692df80d21"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-durable-note-lifecycle",
+      "date": "2026-08-01",
+      "summary": "Durable note CRUD, anchor evidence, Studio editing, and deterministic context refresh",
+      "features": [
+        {
+          "id": "markdown-notes",
+          "type": "changed",
+          "fingerprint": "60a81aec3a34045421e41e79f4847efab3c28962356f45038929f0d77f1b811c"
+        },
+        {
+          "id": "llm-context",
+          "type": "changed",
+          "fingerprint": "29554028e8f2ca715ee7e506f993d698a1739752702850a3632fdcca4c0e665d"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-runtime-interaction-probe-evidence",
+      "date": "2026-08-01",
+      "summary": "Durable route-scoped interaction probe evidence in Studio and LLM context",
+      "features": [
+        {
+          "id": "application-atlas",
+          "type": "changed",
+          "fingerprint": "59b1587bf5db3276c0db93cd87134e60c64474e968d741c7c830132a0c8aac31"
+        },
+        {
+          "id": "interaction-diagnostics",
+          "type": "changed",
+          "fingerprint": "3b5a71f55fb034d1622ab5eef2d41232b9c776d66c307b1dba8b04408c977200"
+        },
+        {
+          "id": "llm-context",
+          "type": "changed",
+          "fingerprint": "2326ace767743a5677c047c565bef6e7e1d161ed8c2fdf68029160716a70a9fe"
+        },
+        {
+          "id": "local-mcp",
+          "type": "changed",
+          "fingerprint": "bc2505cae7b542aacf44d55d0fb75b8cddb688db562c4cecf0d352f5df7c09b7"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-standalone-component-preview-runtime",
+      "date": "2026-08-01",
+      "summary": "Standalone Topo component preview runtime and evidence capture",
+      "features": [
+        {
+          "id": "application-atlas",
+          "type": "changed",
+          "fingerprint": "59b1587bf5db3276c0db93cd87134e60c64474e968d741c7c830132a0c8aac31"
+        },
+        {
+          "id": "screen-capture",
+          "type": "changed",
+          "fingerprint": "f0163275e56bf2d7a4bac3a63c5e4281dcb5c91ddabe820e26c51bb184d1fcbb"
+        },
+        {
+          "id": "llm-context",
+          "type": "changed",
+          "fingerprint": "2326ace767743a5677c047c565bef6e7e1d161ed8c2fdf68029160716a70a9fe"
+        },
+        {
+          "id": "local-mcp",
+          "type": "changed",
+          "fingerprint": "bc2505cae7b542aacf44d55d0fb75b8cddb688db562c4cecf0d352f5df7c09b7"
+        },
+        {
+          "id": "storybook-ingestion",
+          "type": "changed",
+          "fingerprint": "55f17ef480e9d8dd66eee4e9b2c21c184d06f1447beb70dc9f532717154893a9"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-standalone-component-previews",
+      "date": "2026-08-01",
+      "summary": "Standalone native Topo component previews",
+      "features": [
+        {
+          "id": "standalone-component-previews",
+          "type": "added",
+          "fingerprint": "f87e06c7965861dce83525a1bd1ca12475606afb50f6eb28d8ec028f70198d57"
+        }
+      ]
+    },
+    {
+      "id": "2026-07-31-component-preview-artifacts",
+      "date": "2026-08-01",
+      "summary": "Extensible component preview capture artifacts and flow snapshot hydration",
+      "features": [
+        {
+          "id": "application-atlas",
+          "type": "changed",
+          "fingerprint": "59b1587bf5db3276c0db93cd87134e60c64474e968d741c7c830132a0c8aac31"
+        },
+        {
+          "id": "screen-capture",
+          "type": "changed",
+          "fingerprint": "4b328d5ed6316012f58bc13e3473b554448afa6f90516cd175bb0f4bd4612e25"
+        },
+        {
+          "id": "user-flows",
+          "type": "changed",
+          "fingerprint": "47919ce7b7cf2d7b29328b2c49337ac3774995cb135cda0f83f5afeec9eadbf4"
+        },
+        {
+          "id": "llm-context",
+          "type": "changed",
+          "fingerprint": "2326ace767743a5677c047c565bef6e7e1d161ed8c2fdf68029160716a70a9fe"
+        },
+        {
+          "id": "local-mcp",
+          "type": "changed",
+          "fingerprint": "bc2505cae7b542aacf44d55d0fb75b8cddb688db562c4cecf0d352f5df7c09b7"
+        },
+        {
+          "id": "storybook-ingestion",
+          "type": "changed",
+          "fingerprint": "dfb7e57d1b28c61317c697be7c340fb36362c5ef80880a21d3ab486567087a61"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-01-component-flow-pixi-scenes",
+      "date": "2026-08-01",
+      "summary": "Components and flows now use selectable Pixi canvases with shared daemon and MCP scene contracts",
+      "features": [
+        {
+          "id": "application-atlas",
+          "type": "changed",
+          "fingerprint": "79e00f2be87db19ad60b69aced275ad8d4e4bc1b8d2c687831667ba825f66c10"
+        },
+        {
+          "id": "user-flows",
+          "type": "changed",
+          "fingerprint": "47919ce7b7cf2d7b29328b2c49337ac3774995cb135cda0f83f5afeec9eadbf4"
+        },
+        {
+          "id": "local-mcp",
+          "type": "changed",
+          "fingerprint": "bff94ae589c878bb59d3eeb36c3dd9883aa597b6d1af471abef6e47e956369fa"
+        }
+      ]
+    },
+    {
+      "id": "2026-07-31-llm-readable-atlas-scene",
+      "date": "2026-08-01",
+      "summary": "The versioned renderer-neutral Atlas scene is now available through the daemon and local MCP resource and tool.",
+      "features": [
+        {
+          "id": "local-mcp",
+          "type": "changed",
+          "fingerprint": "a81f1c335928b99cc8674afdb1591a59337e7c961851baa5fdb4458f84fcb5c6"
+        }
+      ]
+    },
+    {
+      "id": "2026-07-31-multi-screen-atlas",
+      "date": "2026-08-01",
+      "summary": "Atlas now renders all route groups, screens, and navigation connections in a selectable Pixi scene while preserving the approved selected-screen view.",
+      "features": [
+        {
+          "id": "application-atlas",
+          "type": "changed",
+          "fingerprint": "6590231be152bfbbda00ecea025423b4fdee0f011dc23bdbffddfb769e81dd47"
+        }
+      ]
+    },
+    {
+      "id": "2026-07-31-snapshot-artifact-endpoint",
+      "date": "2026-08-01",
+      "summary": "The loopback daemon now exposes root-contained snapshot image endpoints and same-origin artifact URLs for Studio.",
+      "features": [
+        {
+          "id": "screen-capture",
+          "type": "changed",
+          "fingerprint": "62b121207d120f2c7575c307f88001e8f6edf911ecba10c286ad45cf36cc253e"
+        }
+      ]
+    },
+    {
+      "id": "2026-07-31-atlas-snapshot-hybrid",
+      "date": "2026-08-01",
+      "summary": "Atlas Routes now renders daemon snapshots as Pixi textures, promotes live routes into sandboxed iframes, and shares a deterministic camera contract.",
+      "features": [
+        {
+          "id": "application-atlas",
+          "type": "changed",
+          "fingerprint": "c1bc1400c108b27c60847f1debda131d1b164b071cd381b480c75b96c31dd5d5"
+        }
+      ]
+    },
+    {
+      "id": "2026-07-31-pixi-hybrid-editor",
+      "date": "2026-08-01",
+      "summary": "Replaced the static Editor stage with a full-bleed Pixi hybrid canvas and synchronized semantic artboard",
+      "features": [
+        {
+          "id": "application-atlas",
+          "type": "changed",
+          "fingerprint": "8a7b2d4b924621cd9c6117d26ed4c0ff5c6b8270f8d2407589ce9368464e2da0"
+        }
+      ]
+    },
+    {
+      "id": "2026-07-31-real-studio-demo",
+      "date": "2026-07-31",
+      "summary": "The website Demo route now opens the real Studio with a deterministic Fieldbase project instead of rendering a separate simulation.",
+      "features": [
+        {
+          "id": "public-website",
+          "type": "changed",
+          "fingerprint": "3f8013b4a2f2d544798f67b578b4877c9b08ccafa3bd4d2aca8af29a6c2c02f0"
+        }
+      ]
+    },
+    {
+      "id": "2026-07-31-studio-review-exports",
+      "date": "2026-07-31",
+      "summary": "Added functional Studio note filters and Markdown, SARIF, and standalone HTML review exports",
+      "features": [
+        {
+          "id": "markdown-notes",
+          "type": "changed",
+          "fingerprint": "c7992bb398f3a563a133bbc644fdb981244a4409255351bc97b7818eabae5f5c"
+        }
+      ]
+    },
+    {
+      "id": "2026-07-31-paper-studio-contract",
+      "date": "2026-07-31",
+      "summary": "Implemented the complete Paper-derived 23-board Studio contract with daemon-backed actions and documented visual parity rules",
+      "features": [
+        {
+          "id": "application-atlas",
+          "type": "changed",
+          "fingerprint": "e5d7a249dff87d0256c466e81ad22bd9ec76d80616ebd23a0d7f1f694dee981e"
+        }
+      ]
+    },
+    {
+      "id": "2026-07-31-cinematic-motion-pass",
+      "date": "2026-07-31",
+      "summary": "Cinematic motion and depth pass",
+      "features": [
+        {
+          "id": "public-website",
+          "type": "changed",
+          "fingerprint": "24e270ef98996215ab48b321a36a3d2bf88088129ea6e7f76d2898565f49f988"
+        }
+      ]
+    },
+    {
+      "id": "2026-07-31-public-site-reference-redesign",
+      "date": "2026-07-31",
+      "summary": "Reference-led public website redesign",
+      "features": [
+        {
+          "id": "public-website",
+          "type": "changed",
+          "fingerprint": "24e270ef98996215ab48b321a36a3d2bf88088129ea6e7f76d2898565f49f988"
+        }
+      ]
+    },
+    {
+      "id": "2026-07-31-public-site-and-docs-contract",
+      "date": "2026-07-31",
+      "summary": "Public website and documentation contract",
+      "features": [
+        {
+          "id": "application-atlas",
+          "type": "added",
+          "fingerprint": "6fc5394cbd349945f62f922342fc2f0b250b6048494c35369f13538919608b61"
+        },
+        {
+          "id": "framework-next",
+          "type": "added",
+          "fingerprint": "995668d82acd2040dc6d37e2e821f6dea90fca51cbf79d410613577ce7b44a54"
+        },
+        {
+          "id": "framework-tanstack",
+          "type": "added",
+          "fingerprint": "0bfbfaa6be41407425cdbf9b748a0adff51be1ae79eb516a56cbabd81645cc19"
+        },
+        {
+          "id": "screen-capture",
+          "type": "added",
+          "fingerprint": "bd98328631a2cf89989b4426310533023e9f55ec0e09a99bde9eb46ad9a9a4e5"
+        },
+        {
+          "id": "markdown-notes",
+          "type": "added",
+          "fingerprint": "d8a9cca1e087e18a6268dd09269659a254916afb8c38ff6eaf963978939f6a6d"
+        },
+        {
+          "id": "user-flows",
+          "type": "added",
+          "fingerprint": "e9c11ff48c24fab2d60cc739b39205551f950bfc894b847a7be6e8eb21872ec8"
+        },
+        {
+          "id": "interaction-diagnostics",
+          "type": "added",
+          "fingerprint": "6935e1248afe731dbc4f653f85ee9f7c0f316c31cb248c70e2a4eb056d31d3d0"
+        },
+        {
+          "id": "llm-context",
+          "type": "added",
+          "fingerprint": "090f0d5e5cca3c2e1f429772c815c61a6e1398702efc4d78fb77f4f92239a468"
+        },
+        {
+          "id": "local-mcp",
+          "type": "added",
+          "fingerprint": "71e9598b6c99dd9c3e4e73787a8a15ebf5a87207ff01d9ebdecd65bd6478c94b"
+        },
+        {
+          "id": "preview-gateway",
+          "type": "added",
+          "fingerprint": "a8adc4e0486f34150f74ad6cbbe005c3b114a164ad09c8983bd6ce8c3161d8fd"
+        },
+        {
+          "id": "storybook-ingestion",
+          "type": "added",
+          "fingerprint": "31890195f07c04dd7a475bc6ed8b4eb8be6bdaaea456ce5b84b0c17adc20cc97"
+        },
+        {
+          "id": "public-website",
+          "type": "added",
+          "fingerprint": "0ee1ef6ff23a6893e6717d90b82e47bae9071fed1624d674a85f5d243cea67b4"
+        },
+        {
+          "id": "documentation-governance",
+          "type": "added",
+          "fingerprint": "7b7bda080ea944d8bba343a4c9303704d867da6b6734d45bd800003aa31d5209"
+        },
+        {
+          "id": "public-cli-package",
+          "type": "added",
+          "fingerprint": "72e8a2c3d0392612fc3238cadf62b610a8ae2a3f05582f99a968482fd097f48b"
+        },
+        {
+          "id": "hosted-workspaces",
+          "type": "added",
+          "fingerprint": "81374d63e7fba91c57e44b97de49a39655533a19c06e34359e1a101522fffa2e"
+        },
+        {
+          "id": "github-project-sync",
+          "type": "added",
+          "fingerprint": "df8fc7357b994bb9e4392e4f6e58f2beec953ae5867bbaad7f23df5cf790204c"
+        },
+        {
+          "id": "organization-mcp",
+          "type": "added",
+          "fingerprint": "198ec2bbf2442fc6041061df1944b876343fa354ed582332ae91265ec13f8d58"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "id": "review-vue-project",
+  "title": "Review Vue project",
+  "description": "Open the Vue project directory and inspect one project.",
+  "status": "verified",
+  "entryStepId": "overview",
+  "tags": ["fixture", "vue"],
+  "steps": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "routePath": "/",
+      "noteIds": [],
+      "nextStepIds": ["projects"]
+    },
+    {
+      "id": "projects",
+      "title": "Projects",
+      "routePath": "/projects",
+      "noteIds": [],
+      "nextStepIds": ["project"]
+    },
+    {
+      "id": "project",
+      "title": "Project",
+      "routePath": "/projects/:projectId",
+      "noteIds": [],
+      "nextStepIds": []
+    }
+  ],
+  "createdAt": "2026-08-02T00:00:00.000Z",
+  "updatedAt": "2026-08-02T00:00:00.000Z"
+}

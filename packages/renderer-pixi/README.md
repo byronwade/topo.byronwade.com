@@ -1,0 +1,7 @@
+# `@topo/renderer-pixi`
+
+PixiJS browser-lifecycle and capture texture-cache boundary. Studio owns scene composition while this package owns reusable application initialization, density limits, renderer telemetry, resize scheduling, teardown, texture lifecycle behavior, and bounded candidate prioritization: selected first, then visible nodes nearest the viewport center, with a hard caller-supplied limit.
+
+`createPixiCanvasHost()` mounts one WebGL application into a dedicated host and gives Atlas, topology, and editor scenes the same lifecycle. Its Pixi ticker never starts: callers render once through `render()` after a scene, camera, texture, or viewport change, so a static canvas consumes no continuous repaint loop. Resize bursts coalesce to one animation frame, pending frames are cancelled before Pixi teardown, initialization failures preserve their original error, and `destroy()` is idempotent even when a React destination unmounts while initialization is still resolving.
+
+`createSnapshotTextureCache()` is a retained-key LRU with independent entry and estimated-byte budgets. Its defaults are 48 textures and 128 MiB. `retain(ids)` protects the active viewport, `get()` updates recency, and stale entries release both their texture and source unless an external asset-cache release hook owns disposal. `stats()` exposes entries, estimated bytes, retained count, hits, misses, evictions, release errors, configured limits, and temporary pressure without importing Studio state.

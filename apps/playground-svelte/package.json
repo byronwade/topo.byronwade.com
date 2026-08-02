@@ -1,0 +1,24 @@
+{
+  "name": "@topo/playground-svelte",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 3080",
+    "build": "vite build",
+    "typecheck": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "test": "vitest run --passWithNoTests"
+  },
+  "dependencies": {
+    "@sveltejs/kit": "^2.70.2",
+    "svelte": "^5.56.8"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-auto": "^7.0.1",
+    "@sveltejs/vite-plugin-svelte": "^7.2.0",
+    "svelte-check": "^4.7.4",
+    "typescript": "^5.8.3",
+    "vite": "^8.2.0",
+    "vitest": "^3.2.4"
+  }
+}

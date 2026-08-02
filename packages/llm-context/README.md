@@ -1,0 +1,3 @@
+# `@topo/llm-context`
+
+Canonical LLM read model for Topo. It converts routes, screen states, components, edges, findings, complete interaction-probe observations, notes, flows, flow steps, route snapshots, component preview artifacts, jobs, preview-profile names, and source read issues into one versioned record envelope with bounded query and deterministic JSONL/Markdown exports. Route records translate compact canvas hierarchy IDs into canonical context IDs and expose reciprocal parent/child relationships. Binary artifacts remain separate and are referenced through stable root-contained resource URIs.

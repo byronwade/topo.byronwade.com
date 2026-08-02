@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "id": "review-pages-customer",
+  "title": "Review a Pages Router customer",
+  "description": "Verify index and dynamic Pages Router bindings through one explicit flow.",
+  "status": "verified",
+  "entryStepId": "open-overview",
+  "tags": ["next-pages", "compatibility"],
+  "steps": [
+    {
+      "id": "open-overview",
+      "title": "Open the overview",
+      "routePath": "/",
+      "action": "Load the Pages Router fixture",
+      "expected": "The compatibility overview appears",
+      "noteIds": [],
+      "nextStepIds": ["open-customers"]
+    },
+    {
+      "id": "open-customers",
+      "title": "Open customers",
+      "routePath": "/customers",
+      "action": "Choose Explore customers",
+      "expected": "The customer review queue appears",
+      "noteIds": [],
+      "nextStepIds": ["open-customer"]
+    },
+    {
+      "id": "open-customer",
+      "title": "Open a customer",
+      "routePath": "/customers/[customerId]",
+      "action": "Choose Acme Plumbing",
+      "expected": "The dynamic customer detail appears",
+      "noteIds": [],
+      "nextStepIds": []
+    }
+  ],
+  "createdAt": "2026-08-01T12:00:00.000Z",
+  "updatedAt": "2026-08-01T12:00:00.000Z"
+}

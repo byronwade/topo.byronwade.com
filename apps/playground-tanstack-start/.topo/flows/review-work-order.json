@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "id": "review-start-work-order",
+  "title": "Review a Start work order",
+  "description": "Verify Start SSR, collection, and dynamic route bindings through one explicit flow.",
+  "status": "verified",
+  "entryStepId": "open-overview",
+  "tags": ["tanstack-start", "compatibility", "server-rendered"],
+  "steps": [
+    {
+      "id": "open-overview",
+      "title": "Open the Start overview",
+      "routePath": "/",
+      "action": "Load the server-rendered Start fixture",
+      "expected": "The server-function contract appears",
+      "noteIds": [],
+      "nextStepIds": ["open-work-orders"]
+    },
+    {
+      "id": "open-work-orders",
+      "title": "Open work orders",
+      "routePath": "/work-orders",
+      "action": "Choose Review work orders",
+      "expected": "The deterministic dispatch queue appears",
+      "noteIds": [],
+      "nextStepIds": ["open-work-order"]
+    },
+    {
+      "id": "open-work-order",
+      "title": "Open a work order",
+      "routePath": "/work-orders/:workOrderId",
+      "action": "Choose work order wo-2041",
+      "expected": "The generated dynamic detail appears",
+      "noteIds": [],
+      "nextStepIds": []
+    }
+  ],
+  "createdAt": "2026-08-01T12:00:00.000Z",
+  "updatedAt": "2026-08-01T12:00:00.000Z"
+}

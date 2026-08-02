@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "id": "review-customer-path",
+  "title": "Review customer path",
+  "description": "Verify the route transition from the home page into customer management.",
+  "status": "verified",
+  "entryStepId": "open-home",
+  "tags": ["playground", "critical-path"],
+  "steps": [
+    {
+      "id": "open-home",
+      "title": "Open the home page",
+      "routePath": "/",
+      "action": "Load the application entry route",
+      "expected": "The Topo playground hero appears",
+      "noteIds": [],
+      "nextStepIds": ["open-dashboard"]
+    },
+    {
+      "id": "open-dashboard",
+      "title": "Open the dashboard",
+      "routePath": "/dashboard",
+      "action": "Choose Open dashboard",
+      "expected": "The dashboard route appears",
+      "noteIds": [],
+      "nextStepIds": ["open-customers"]
+    },
+    {
+      "id": "open-customers",
+      "title": "Open customer management",
+      "routePath": "/dashboard/customers",
+      "action": "Choose Customers",
+      "expected": "The customer management screen appears",
+      "noteIds": ["customer-empty-state"],
+      "nextStepIds": []
+    }
+  ],
+  "createdAt": "2026-07-31T12:00:00.000Z",
+  "updatedAt": "2026-07-31T12:00:00.000Z"
+}

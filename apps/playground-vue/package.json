@@ -1,0 +1,23 @@
+{
+  "name": "@topo/playground-vue",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 3060",
+    "build": "vue-tsc --noEmit && vite build",
+    "typecheck": "vue-tsc --noEmit",
+    "test": "vitest run --passWithNoTests"
+  },
+  "dependencies": {
+    "vue": "^3.5.40",
+    "vue-router": "^5.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.8",
+    "typescript": "^5.8.3",
+    "vite": "^8.2.0",
+    "vitest": "^3.2.4",
+    "vue-tsc": "^3.3.9"
+  }
+}

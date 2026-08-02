@@ -1,0 +1,334 @@
+:root {
+  color-scheme: dark;
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  color: #f1f4ef;
+  background: #0d100f;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(circle at 76% 4%, rgb(103 232 166 / 9%), transparent 34rem),
+    #0d100f;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.fixture-shell {
+  min-height: 100vh;
+}
+
+.fixture-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) auto minmax(220px, 1fr);
+  align-items: center;
+  min-height: 68px;
+  padding: 0 clamp(20px, 5vw, 72px);
+  border-bottom: 1px solid rgb(255 255 255 / 9%);
+  background: rgb(13 16 15 / 86%);
+  backdrop-filter: blur(18px);
+}
+
+.fixture-brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  width: max-content;
+}
+
+.fixture-brand > span:last-child {
+  display: grid;
+  gap: 2px;
+}
+
+.fixture-brand strong {
+  font-size: 13px;
+}
+
+.fixture-brand small,
+.fixture-header > code {
+  color: #77817c;
+  font-size: 10px;
+}
+
+.fixture-mark {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border: 1px solid #335c49;
+  border-radius: 8px;
+  color: #67e8a6;
+  background: #14231b;
+  font:
+    700 13px/1 ui-monospace,
+    monospace;
+}
+
+.fixture-header nav {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid rgb(255 255 255 / 8%);
+  border-radius: 10px;
+  background: #121615;
+}
+
+.fixture-header nav a {
+  padding: 7px 12px;
+  border-radius: 7px;
+  color: #8e9893;
+  font-size: 12px;
+}
+
+.fixture-header nav a:hover,
+.fixture-header nav a.is-active {
+  color: #f1f4ef;
+  background: #202624;
+}
+
+.fixture-header > code {
+  justify-self: end;
+}
+
+.fixture-page {
+  width: min(1040px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 96px 0;
+}
+
+.fixture-hero {
+  max-width: 760px;
+  padding: 54px 0 70px;
+}
+
+.fixture-kicker {
+  margin: 0 0 18px;
+  color: #67e8a6;
+  font:
+    700 10px/1.2 ui-monospace,
+    monospace;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  max-width: 760px;
+  margin-bottom: 24px;
+  font-size: clamp(42px, 7vw, 78px);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+
+.fixture-hero > p:not(.fixture-kicker),
+.fixture-profile > p:not(.fixture-kicker),
+.fixture-detail p {
+  max-width: 620px;
+  color: #939d98;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.fixture-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 34px;
+}
+
+.fixture-button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 0 17px;
+  border: 1px solid #303936;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 650;
+  background: #171c1a;
+}
+
+.fixture-button.is-primary {
+  border-color: #67e8a6;
+  color: #0a120e;
+  background: #67e8a6;
+}
+
+.fixture-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-block: 1px solid rgb(255 255 255 / 9%);
+}
+
+.fixture-metrics article {
+  display: grid;
+  gap: 9px;
+  padding: 30px 0;
+}
+
+.fixture-metrics article + article {
+  padding-left: 30px;
+  border-left: 1px solid rgb(255 255 255 / 9%);
+}
+
+.fixture-metrics strong {
+  font:
+    600 28px/1 ui-monospace,
+    monospace;
+}
+
+.fixture-metrics span,
+.fixture-page-heading > span {
+  color: #7f8984;
+  font-size: 11px;
+}
+
+.fixture-page-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  padding-bottom: 28px;
+  border-bottom: 1px solid rgb(255 255 255 / 9%);
+}
+
+.fixture-page-heading h1,
+.fixture-profile h1 {
+  margin: 0;
+  font-size: 52px;
+}
+
+.fixture-job-list {
+  display: grid;
+}
+
+.fixture-job-list > a {
+  display: grid;
+  grid-template-columns: 110px 1fr auto;
+  gap: 20px;
+  align-items: center;
+  min-height: 72px;
+  border-bottom: 1px solid rgb(255 255 255 / 8%);
+}
+
+.fixture-job-list > a:hover {
+  color: #67e8a6;
+}
+
+.fixture-job-list code,
+.fixture-job-list span {
+  color: #7f8984;
+  font-size: 11px;
+}
+
+.fixture-detail {
+  margin-top: 30px;
+  padding: 28px;
+  border: 1px solid #315a47;
+  border-radius: 12px;
+  background: #111c16;
+}
+
+.fixture-detail h2 {
+  font:
+    600 28px/1 ui-monospace,
+    monospace;
+}
+
+.fixture-detail a {
+  color: #67e8a6;
+  font-size: 12px;
+}
+
+.fixture-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 12px;
+  align-items: end;
+  margin-top: 48px;
+  padding: 24px;
+  border: 1px solid rgb(255 255 255 / 9%);
+  border-radius: 12px;
+  background: #121615;
+}
+
+.fixture-form label {
+  display: grid;
+  gap: 9px;
+  color: #7f8984;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.fixture-form input,
+.fixture-form button {
+  min-height: 42px;
+  padding: 0 12px;
+  border: 1px solid #303936;
+  border-radius: 7px;
+  color: #dce2df;
+  background: #181d1b;
+}
+
+.fixture-form button {
+  color: #67e8a6;
+}
+
+@media (max-width: 720px) {
+  .fixture-header {
+    grid-template-columns: 1fr auto;
+  }
+
+  .fixture-header > code {
+    display: none;
+  }
+
+  .fixture-header nav a {
+    padding-inline: 8px;
+  }
+
+  .fixture-brand small {
+    display: none;
+  }
+
+  .fixture-metrics,
+  .fixture-form {
+    grid-template-columns: 1fr;
+  }
+
+  .fixture-metrics article + article {
+    padding-left: 0;
+    border-top: 1px solid rgb(255 255 255 / 9%);
+    border-left: 0;
+  }
+}

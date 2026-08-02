@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "id": "review-react-customer",
+  "title": "Review React customer",
+  "description": "Open the React customer directory and inspect one customer.",
+  "status": "verified",
+  "entryStepId": "overview",
+  "tags": ["fixture", "react"],
+  "steps": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "routePath": "/",
+      "noteIds": [],
+      "nextStepIds": ["customers"]
+    },
+    {
+      "id": "customers",
+      "title": "Customers",
+      "routePath": "/customers",
+      "noteIds": [],
+      "nextStepIds": ["customer"]
+    },
+    {
+      "id": "customer",
+      "title": "Customer",
+      "routePath": "/customers/:customerId",
+      "noteIds": [],
+      "nextStepIds": []
+    }
+  ],
+  "createdAt": "2026-08-02T00:00:00.000Z",
+  "updatedAt": "2026-08-02T00:00:00.000Z"
+}
