@@ -20,7 +20,7 @@
     "mvp": "pnpm build && concurrently -k -n playground,daemon,studio \"pnpm --filter @topo/playground-next-app dev\" \"node packages/cli/dist/index.js dev apps/playground-next-app --no-app --no-studio\" \"pnpm --filter @topo/studio dev\"",
     "preview:component": "pnpm --filter @topo/preview-runtime build && node scripts/serve-standalone-preview.mjs apps/playground-next-app components/StatusCard.topo.tsx Routes",
     "web": "turbo run build --filter=@topo/showcase-builder && pnpm --filter @topo/web dev",
-    "benchmark": "pnpm --filter @topo/benchmark build && node apps/benchmark/dist/cli.js",
+    "benchmark": "pnpm exec turbo run build --filter=@topo/benchmark... --concurrency=4 && node apps/benchmark/dist/cli.js",
     "benchmark:web": "pnpm --filter @topo/benchmark build && node apps/benchmark/dist/web-performance-cli.js",
     "verify:studio-runtime": "pnpm exec turbo run build --filter=@topo/studio... --filter=@topo/studio-host... --filter=@topo/benchmark... --concurrency=4 && node apps/benchmark/dist/studio-loading-cli.js",
     "verify:studio-boards": "pnpm exec turbo run build --filter=@topo/studio... --filter=@topo/studio-api... --filter=@topo/studio-host... --filter=@topo/benchmark... --concurrency=4 && node apps/benchmark/dist/studio-board-cli.js",
