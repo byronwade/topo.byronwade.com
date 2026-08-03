@@ -22,12 +22,12 @@
     "web": "turbo run build --filter=@topo/showcase-builder && pnpm --filter @topo/web dev",
     "benchmark": "pnpm --filter @topo/benchmark build && node apps/benchmark/dist/cli.js",
     "benchmark:web": "pnpm --filter @topo/benchmark build && node apps/benchmark/dist/web-performance-cli.js",
-    "verify:studio-runtime": "pnpm --filter @topo/studio-host build && pnpm --filter @topo/studio build && pnpm --filter @topo/benchmark build && node apps/benchmark/dist/studio-loading-cli.js",
-    "verify:studio-boards": "pnpm --filter @topo/studio-api build && pnpm --filter @topo/studio-host build && pnpm --filter @topo/studio build && pnpm --filter @topo/benchmark build && node apps/benchmark/dist/studio-board-cli.js",
-    "verify:studio-profiles": "pnpm --filter @topo/runtime-bridge build && pnpm --filter @topo/gateway build && pnpm --filter @topo/studio build && pnpm --filter @topo/benchmark build && node apps/benchmark/dist/studio-profile-cli.js",
-    "verify:local-runtime": "pnpm --filter @topo/studio build && turbo run build --filter=@topo/benchmark && node apps/benchmark/dist/local-runtime-cli.js",
-    "verify:framework-fixtures": "pnpm --filter @topo/playground-next-app build && pnpm --filter @topo/playground-next-pages build && pnpm --filter @topo/playground-tanstack-router build && pnpm --filter @topo/playground-tanstack-start build && pnpm --filter @topo/playground-react build && pnpm --filter @topo/playground-vue build && pnpm --filter @topo/playground-nuxt build && pnpm --filter @topo/playground-svelte build && turbo run build --filter=@topo/benchmark && node apps/benchmark/dist/framework-fixtures-cli.js",
-    "verify:storybook": "pnpm --filter @topo/playground-storybook build && turbo run build --filter=@topo/benchmark && node apps/benchmark/dist/storybook-cli.js",
+    "verify:studio-runtime": "pnpm exec turbo run build --filter=@topo/studio... --filter=@topo/studio-host... --filter=@topo/benchmark... --concurrency=4 && node apps/benchmark/dist/studio-loading-cli.js",
+    "verify:studio-boards": "pnpm exec turbo run build --filter=@topo/studio... --filter=@topo/studio-api... --filter=@topo/studio-host... --filter=@topo/benchmark... --concurrency=4 && node apps/benchmark/dist/studio-board-cli.js",
+    "verify:studio-profiles": "pnpm exec turbo run build --filter=@topo/runtime-bridge... --filter=@topo/gateway... --filter=@topo/studio... --filter=@topo/benchmark... --concurrency=4 && node apps/benchmark/dist/studio-profile-cli.js",
+    "verify:local-runtime": "pnpm exec turbo run build --filter=@topo/studio... --filter=@topo/benchmark... --concurrency=4 && node apps/benchmark/dist/local-runtime-cli.js",
+    "verify:framework-fixtures": "pnpm exec turbo run build --filter=@topo/playground-next-app... --filter=@topo/playground-next-pages... --filter=@topo/playground-tanstack-router... --filter=@topo/playground-tanstack-start... --filter=@topo/playground-react... --filter=@topo/playground-vue... --filter=@topo/playground-nuxt... --filter=@topo/playground-svelte... --filter=@topo/benchmark... --concurrency=4 && node apps/benchmark/dist/framework-fixtures-cli.js",
+    "verify:storybook": "pnpm exec turbo run build --filter=@topo/playground-storybook... --filter=@topo/benchmark... --concurrency=4 && node apps/benchmark/dist/storybook-cli.js",
     "format": "prettier --write ."
   },
   "devDependencies": {
