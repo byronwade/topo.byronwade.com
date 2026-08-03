@@ -110,7 +110,6 @@ try {
       pnpmCli,
       "add",
       "--ignore-workspace",
-      "--offline",
       "--save-dev",
       tarballPath,
     ],
