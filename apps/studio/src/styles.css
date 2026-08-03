@@ -19,6 +19,19 @@
   --color-note: #a78bfa;
   --color-well: #0f0f0f;
   --color-surface-active: #2a2a2a;
+  --scrollbar-track: color-mix(in srgb, var(--color-ground) 58%, transparent);
+  --scrollbar-thumb: color-mix(
+    in srgb,
+    var(--color-text-faint) 42%,
+    transparent
+  );
+  --scrollbar-thumb-hover: color-mix(
+    in srgb,
+    var(--color-primary) 78%,
+    transparent
+  );
+  --scrollbar-thumb-active: var(--color-primary-solid);
+  --scrollbar-size: 10px;
   --font-sans: "Inter Variable", Inter, ui-sans-serif, system-ui, sans-serif;
   --font-mono:
     "JetBrains Mono Variable", "JetBrains Mono", ui-monospace, monospace;
@@ -673,6 +686,18 @@
   --color-primary-dim: #dceeff;
   --color-well: #eeeeec;
   --color-surface-active: #ffffff;
+  --scrollbar-track: color-mix(in srgb, var(--color-border) 28%, transparent);
+  --scrollbar-thumb: color-mix(
+    in srgb,
+    var(--color-text-muted) 40%,
+    transparent
+  );
+  --scrollbar-thumb-hover: color-mix(
+    in srgb,
+    var(--color-primary) 78%,
+    transparent
+  );
+  --scrollbar-thumb-active: var(--color-primary-solid);
 }
 
 * {
@@ -699,6 +724,96 @@ body,
   height: 100%;
   margin: 0;
   overflow: hidden;
+}
+
+/*
+ * Studio scrollbar system
+ *
+ * Keep the rail quiet and let the thumb become legible on interaction. The
+ * standards properties cover Firefox and current Chromium; the WebKit rules
+ * provide the same inset, rounded treatment in Safari and embedded shells.
+ * Applying this to descendants means new scrollable panels inherit the visual
+ * system without another selector or component prop.
+ */
+.topo-studio,
+.topo-studio * {
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+  scrollbar-width: thin;
+}
+
+.topo-studio::-webkit-scrollbar,
+.topo-studio *::-webkit-scrollbar {
+  width: var(--scrollbar-size);
+  height: var(--scrollbar-size);
+}
+
+.topo-studio::-webkit-scrollbar-track,
+.topo-studio *::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+.topo-studio::-webkit-scrollbar-thumb,
+.topo-studio *::-webkit-scrollbar-thumb {
+  border: 3px solid transparent;
+  border-radius: 999px;
+  background: var(--scrollbar-thumb);
+  background-clip: padding-box;
+}
+
+.topo-studio::-webkit-scrollbar-thumb:hover,
+.topo-studio *::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+  background-clip: padding-box;
+}
+
+.topo-studio::-webkit-scrollbar-thumb:active,
+.topo-studio *::-webkit-scrollbar-thumb:active {
+  background: var(--scrollbar-thumb-active);
+  background-clip: padding-box;
+}
+
+.topo-studio::-webkit-scrollbar-corner,
+.topo-studio *::-webkit-scrollbar-corner,
+.topo-studio::-webkit-scrollbar-button,
+.topo-studio *::-webkit-scrollbar-button {
+  background: transparent;
+}
+
+.topo-studio
+  :where(
+    .api-endpoint-list,
+    .api-endpoints-canvas,
+    .api-endpoint-inspector,
+    .tree-scroll,
+    .route-tree-scroll,
+    .atlas-inspector,
+    .flow-list,
+    .flows-canvas,
+    .component-coverage-sections,
+    .component-sidebar-scroll,
+    .component-detail,
+    .flow-step-index,
+    .probe-inspector,
+    .notes-list-panel,
+    .doctor-report-panel,
+    .note-detail-inspector,
+    .findings-overlay-list,
+    .settings-view,
+    .property-inspector,
+    .editor-layer-tree,
+    .editor-screen-list,
+    .assets-panel,
+    .command-results
+  ) {
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+}
+
+@media (forced-colors: active) {
+  .topo-studio,
+  .topo-studio * {
+    scrollbar-color: auto;
+  }
 }
 
 body {
@@ -1240,25 +1355,6 @@ kbd {
 .atlas-routes-view .atlas-sidebar {
   display: flex;
   flex-direction: column;
-}
-
-.atlas-routes-view .atlas-sidebar,
-.atlas-routes-view .atlas-inspector {
-  scrollbar-color: #3a3a3a transparent;
-  scrollbar-width: thin;
-}
-
-.atlas-routes-view .atlas-sidebar::-webkit-scrollbar,
-.atlas-routes-view .atlas-inspector::-webkit-scrollbar,
-.atlas-routes-view .route-tree-scroll::-webkit-scrollbar {
-  width: 6px;
-}
-
-.atlas-routes-view .atlas-sidebar::-webkit-scrollbar-thumb,
-.atlas-routes-view .atlas-inspector::-webkit-scrollbar-thumb,
-.atlas-routes-view .route-tree-scroll::-webkit-scrollbar-thumb {
-  border-radius: 999px;
-  background: #3a3a3a;
 }
 
 .route-index-summary {
@@ -3053,21 +3149,6 @@ kbd {
   flex: 1;
   overflow-y: auto;
   padding-bottom: 18px;
-  scrollbar-color: #3a3a3a transparent;
-  scrollbar-width: thin;
-}
-
-.atlas-flows-view .flow-list::-webkit-scrollbar,
-.atlas-flows-view .flow-inspector::-webkit-scrollbar,
-.flow-step-index::-webkit-scrollbar {
-  width: 6px;
-}
-
-.atlas-flows-view .flow-list::-webkit-scrollbar-thumb,
-.atlas-flows-view .flow-inspector::-webkit-scrollbar-thumb,
-.flow-step-index::-webkit-scrollbar-thumb {
-  border-radius: 999px;
-  background: #3a3a3a;
 }
 
 .flow-list-heading button {
@@ -4079,8 +4160,6 @@ kbd {
   gap: 2px;
   overflow-y: auto;
   padding-right: 2px;
-  scrollbar-color: #3a3a3a transparent;
-  scrollbar-width: thin;
 }
 
 .flow-step-index-item {
@@ -6680,8 +6759,6 @@ kbd {
   max-height: min(560px, calc(100vh - 180px));
   overflow-y: auto;
   overscroll-behavior: contain;
-  scrollbar-color: #45434a transparent;
-  scrollbar-width: thin;
 }
 
 .command-palette section {
