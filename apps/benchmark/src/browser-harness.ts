@@ -550,7 +550,11 @@ async function runBrowserBenchmark(
         "Observe requestAnimationFrame cadence separately from Topo's controllable camera work.",
       samplesMs: cameraMeasurement.samples,
       budgetMs: frameCadenceBudget,
-      enforced: true,
+      // requestAnimationFrame cadence is owned by the browser scheduler. A
+      // SwiftShader runner cannot provide native-GPU pacing proof, so retain
+      // the measurement as an informational result while keeping the
+      // product-controlled camera-frame-work gate enforced.
+      enforced: !softwareRenderer,
       workload: {
         frames: profile.cameraFrames,
         sceneSprites: cameraItems.length,
