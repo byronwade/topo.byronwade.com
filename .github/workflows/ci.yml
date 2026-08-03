@@ -25,7 +25,25 @@ jobs:
       - run: pnpm docs:check
       - run: pnpm exec turbo run typecheck --concurrency=4
       - run: pnpm exec turbo run test --filter=!@topo/browser --concurrency=4
-      - run: pnpm --filter @topo/browser test
+      - name: Run browser unit tests
+        shell: pwsh
+        run: |
+          $maxAttempts = 3
+          for ($attempt = 1; $attempt -le $maxAttempts; $attempt++) {
+            pnpm --filter @topo/browser test
+            $exitCode = $LASTEXITCODE
+            if ($exitCode -eq 0) {
+              exit 0
+            }
+            if ($exitCode -ne -1073741502 -and $exitCode -ne 3221225794) {
+              exit $exitCode
+            }
+            if ($attempt -lt $maxAttempts) {
+              Write-Host "Browser test process launch failed with $exitCode; retrying ($attempt/$maxAttempts)."
+              Start-Sleep -Seconds 5
+            }
+          }
+          exit $exitCode
       - run: pnpm exec turbo run build --concurrency=4
       - run: pnpm --filter @topo/cli pack:check
       - run: pnpm benchmark --profile smoke --check

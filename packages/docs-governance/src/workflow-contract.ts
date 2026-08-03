@@ -33,7 +33,9 @@ function commands(job: unknown): string[] {
 }
 
 function hasCommand(values: readonly string[], expected: string) {
-  return values.some((value) => value.trim() === expected);
+  return values.some((value) =>
+    value.split(/\r?\n/).some((line) => line.trim() === expected),
+  );
 }
 
 function hasPlaywrightChromiumInstall(values: readonly string[]) {
