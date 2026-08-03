@@ -73,6 +73,8 @@ async function main(): Promise<void> {
       atlasColdP95Ms: report.atlas.cold.p95Ms,
       atlasHotP95Ms: report.atlas.hot.p95Ms,
       atlasPixiAssets: report.atlas.pixiAssets.length,
+      performanceInformationalFailures:
+        report.performanceSummary.informationalFailures,
       comparisonStatus,
       comparison: comparisonPath,
       report: outputPath,

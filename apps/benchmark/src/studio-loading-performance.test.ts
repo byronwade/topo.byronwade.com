@@ -34,6 +34,21 @@ describe("summarizeStudioLoadingResult", () => {
     expect(result.status).toBe("pass");
   });
 
+  it("retains cold timing misses as informational evidence when unenforced", () => {
+    const result = summarizeStudioLoadingResult({
+      id: "notes-cold-ready",
+      title: "Notes cold readiness",
+      description: "test",
+      samplesMs: [251],
+      budgetMs: 250,
+      enforced: false,
+      workload: { latencyClass: "cold" },
+    });
+
+    expect(result.enforced).toBe(false);
+    expect(result.status).toBe("fail");
+  });
+
   it("rejects empty measurements", () => {
     expect(() =>
       summarizeStudioLoadingResult({

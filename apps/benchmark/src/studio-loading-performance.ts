@@ -30,7 +30,8 @@ export interface StudioLoadingPerformanceResult {
   description: string;
   samplesMs: number[];
   budgetMs: number;
-  enforced: true;
+  /** Whether this result contributes to the process exit status on this runtime. */
+  enforced: boolean;
   workload: Record<string, number | string>;
   unit: "ms";
   status: "pass" | "fail";
@@ -99,6 +100,7 @@ export interface StudioLoadingReport {
   performanceSummary: {
     passed: number;
     failed: number;
+    informationalFailures: number;
     total: number;
   };
   checks: StudioLoadingCheck[];
@@ -162,6 +164,7 @@ export function summarizeStudioLoadingResult(input: {
   description: string;
   samplesMs: readonly number[];
   budgetMs: number;
+  enforced?: boolean;
   workload: Record<string, number | string>;
 }): StudioLoadingPerformanceResult {
   if (input.samplesMs.length === 0) {
@@ -180,7 +183,7 @@ export function summarizeStudioLoadingResult(input: {
     description: input.description,
     samplesMs: input.samplesMs.map(rounded),
     budgetMs: input.budgetMs,
-    enforced: true,
+    enforced: input.enforced ?? true,
     workload: input.workload,
     unit: "ms",
     status: p95 <= input.budgetMs ? "pass" : "fail",
@@ -428,6 +431,11 @@ function destinationResult(
       navigation: cold ? "document" : "history",
       selector: destination.selector,
     },
+    // Cold readiness is retained as evidence, but its absolute time depends on
+    // the runner's process scheduler, filesystem, browser startup, and cache
+    // state. The portable runtime gate remains the functional contract plus
+    // the warm destination target.
+    enforced: !cold,
   });
 }
 
@@ -487,7 +495,13 @@ export async function runMeasuredStudioLoadingCheck(
       options,
     );
     const performanceFailed = results.filter(
-      (result) => result.status === "fail",
+      (result) => result.status === "fail" && result.enforced,
+    ).length;
+    const performanceInformationalFailures = results.filter(
+      (result) => result.status === "fail" && !result.enforced,
+    ).length;
+    const performancePassed = results.filter(
+      (result) => result.status === "pass",
     ).length;
     const pageErrors = [
       ...notesMeasurement.cold.pageErrors,
@@ -560,8 +574,9 @@ export async function runMeasuredStudioLoadingCheck(
       },
       summary: functional.summary,
       performanceSummary: {
-        passed: results.length - performanceFailed,
+        passed: performancePassed,
         failed: performanceFailed,
+        informationalFailures: performanceInformationalFailures,
         total: results.length,
       },
       checks: functional.checks,
